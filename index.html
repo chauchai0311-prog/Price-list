@@ -1,0 +1,2414 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Прайс-лист — ЧаюЧай (ОПТ)</title>
+    <!-- Fonts & Icons -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    
+    <style>
+        /* ===== RESET & BASE ===== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f7f3ee;
+            color: #2c2c2c;
+            padding: 0 20px 40px;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+       /* ===== HEADER ===== */
+.header {
+    background: #2e5e0a;  /* сплошной цвет, совпадающий с фоном логотипа */
+    color: #fff;
+    border-radius: 28px;
+    padding: 24px 40px 20px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 8px 30px rgba(45, 80, 22, 0.30);
+    position: relative;
+    overflow: hidden;
+}
+
+.header-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.logo {
+    width: 100%;            /* растянуть на всю доступную ширину */
+    max-width: 400px;       /* но не более 600px, чтобы не расползался */
+    height: auto;           /* высота автоматически подстроится под пропорции */
+    background: transparent;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    box-shadow: none;
+    margin: 0 auto;         /* центрирование */
+}
+
+.logo img {
+    width: 100%;
+    height: auto;           /* автоматическая высота, сохраняя пропорции */
+    object-fit: contain;    /* или убрать совсем, если картинка сама встанет */
+}
+
+.brand {
+    text-align: center;
+    z-index: 1;
+    padding: 0 10px;
+}
+
+.brand h1 {
+    display: none;  /* скрываем название, так как оно есть в логотипе */
+}
+
+.brand p {
+    font-size: 18px;
+    opacity: 0.9;
+    font-weight: 300;
+    margin: 4px 0 2px;
+}
+
+.brand .sub {
+    font-size: 14px;
+    opacity: 0.7;
+    line-height: 1.5;
+}
+
+.header-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    z-index: 1;
+    gap: 20px;
+    margin-top: 4px;
+}
+
+.advantages {
+    display: flex;
+    flex-direction: column;   /* столбиком */
+    gap: 6px 0;
+    flex: 1 1 300px;
+}
+
+.advantages .adv-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    opacity: 0.92;
+}
+
+.advantages .adv-item i {
+    font-size: 16px;
+    color: #c9a96e;
+    width: 22px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    flex: 0 0 auto;
+}
+
+.contacts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    justify-content: flex-end;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.contacts a {
+    color: #fff;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+}
+
+.contacts a:hover {
+    opacity: 0.8;
+}
+
+.contacts i {
+    color: #c9a96e;
+    width: 18px;
+    text-align: center;
+}
+
+.cart-badge {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 10px 16px 10px 14px;
+    border-radius: 40px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: background 0.2s;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 2px;
+}
+
+.cart-badge:hover {
+    background: rgba(255, 255, 255, 0.20);
+}
+
+.cart-badge i {
+    font-size: 20px;
+}
+
+.cart-badge .count {
+    background: #c9a96e;
+    color: #2d5016;
+    border-radius: 40px;
+    padding: 0 10px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 22px;
+    min-width: 22px;
+    text-align: center;
+}
+/* ===== FOOTER / РЕКВИЗИТЫ ===== */
+.company-details {
+    background: #2e5e0a;  /* тот же цвет, что и у шапки */
+    color: #fff;
+    border-radius: 28px;
+    padding: 28px 40px;
+    margin: 40px auto 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px 20px;
+    box-shadow: 0 8px 30px rgba(45, 80, 22, 0.20);
+    font-family: 'Inter', sans-serif;
+}
+
+.company-details .left-block {
+    flex: 1 1 300px;
+}
+
+.company-details .left-block h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+    color: #c9a96e;
+}
+
+.company-details .left-block p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.6;
+    margin: 4px 0;
+    opacity: 0.92;
+}
+
+.company-details .right-block {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-start;
+}
+
+.company-details .right-block a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 400;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.2s;
+}
+
+.company-details .right-block a:hover {
+    opacity: 0.8;
+}
+
+.company-details .right-block a i {
+    color: #c9a96e;
+    width: 20px;
+    text-align: center;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 820px) {
+    .company-details {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 24px 22px;
+        text-align: center;
+        gap: 0 !important;
+        row-gap: 0 !important;
+        justify-content: flex-start !important;
+        align-content: flex-start !important;
+        flex-wrap: nowrap !important;
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    .company-details .left-block {
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-bottom: 4px !important;
+        flex: none !important;
+        width: 100%;
+    }
+
+    .company-details .left-block p {
+        margin: 2px 0;
+    }
+
+    .company-details .right-block {
+        margin: 0 !important;
+        padding: 0 !important;
+        align-items: center;
+        gap: 4px;
+        flex: none !important;
+    }
+
+    .search-wrap i {
+        display: none !important;
+    }
+
+    .search-wrap input {
+        padding-left: 16px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .company-details {
+        padding: 14px 12px;
+        border-radius: 20px;
+        gap: 0 !important;
+        row-gap: 0 !important;
+        justify-content: flex-start !important;
+        align-content: flex-start !important;
+        flex-wrap: nowrap !important;
+        height: auto !important;
+        min-height: 0 !important;
+    }
+
+    .company-details .left-block {
+        margin: 0 !important;
+        padding: 0 !important;
+        margin-bottom: 2px !important;
+        flex: none !important;
+        width: 100%;
+    }
+
+    .company-details .left-block p {
+        font-size: 13px;
+        margin: 2px 0;
+    }
+
+    .company-details .right-block {
+        margin: 0 !important;
+        padding: 0 !important;
+        gap: 4px !important;
+        flex: none !important;
+    }
+
+    .company-details .right-block a {
+        font-size: 13px;
+    }
+}
+
+        /* ===== PARTNERS CAROUSEL ===== */
+        .partners-section {
+            margin: 32px auto 28px;
+            background: #fff;
+            border-radius: 24px;
+            padding: 24px 32px;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        .partners-section .section-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #8a7a6a;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 40px;
+            transition: transform 0.5s ease;
+            will-change: transform;
+        }
+
+        .carousel-slide {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+           width: 220px;
+    min-width: 220px;
+    max-width: 220px;
+            padding: 8px 12px;
+            background: #f9f6f2;
+            border-radius: 16px;
+            font-weight: 600;
+            font-size: 15px;
+            color: #3d3d3d;
+            white-space: normal;
+    text-align: center;
+    line-height: 1.3;
+        }
+
+        .carousel-slide i {
+            font-size: 28px;
+            color: #2d5016;
+            opacity: 0.7;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 18px;
+        }
+
+        .carousel-controls button {
+            background: #e8e0d8;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 16px;
+            color: #4a3f35;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-controls button:hover {
+            background: #d5cbc0;
+        }
+
+        .carousel-controls button:active {
+            transform: scale(0.92);
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            margin-left: 12px;
+        }
+
+        .carousel-dots .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #d5cbc0;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .carousel-dots .dot.active {
+            background: #2d5016;
+            transform: scale(1.25);
+        }
+
+        /* ===== SEARCH & FILTER ===== */
+        .filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-bottom: 32px;
+            background: #fff;
+            padding: 18px 24px;
+            border-radius: 20px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+            align-items: center;
+        }
+
+        .search-wrap {
+    flex: 1 1 280px;
+    position: relative;
+    overflow: hidden;
+        }
+.search-wrap i {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a09080;
+    font-size: 16px;
+    z-index: 2;
+    display: inline-block;
+    pointer-events: none;
+}
+
+        .search-wrap input {
+            width: 100%;
+            padding: 12px 16px 12px 46px;
+            border: 2px solid #ece6df;
+            border-radius: 14px;
+            font-size: 15px;
+            font-family: inherit;
+            background: #fbf9f7;
+            transition: border-color 0.25s, box-shadow 0.25s;
+            outline: none;
+            color: #2c2c2c;
+        }
+
+        .search-wrap input:focus {
+            border-color: #2d5016;
+            box-shadow: 0 0 0 4px rgba(45, 80, 22, 0.10);
+            background: #fff;
+        }
+
+        .search-wrap input::placeholder {
+            color: #b0a090;
+        }
+
+        .category-filter {
+            flex: 0 0 auto;
+            min-width: 180px;
+        }
+
+        .category-filter select {
+            width: 100%;
+            padding: 12px 18px;
+            border: 2px solid #ece6df;
+            border-radius: 14px;
+            font-size: 15px;
+            font-family: inherit;
+            background: #fbf9f7 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238a7a6a' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat right 16px center;
+            appearance: none;
+            cursor: pointer;
+            transition: border-color 0.25s, box-shadow 0.25s;
+            outline: none;
+            color: #2c2c2c;
+        }
+
+        .category-filter select:focus {
+            border-color: #2d5016;
+            box-shadow: 0 0 0 4px rgba(45, 80, 22, 0.10);
+        }
+
+        .filter-stats {
+            font-size: 14px;
+            color: #8a7a6a;
+            margin-left: auto;
+            white-space: nowrap;
+        }
+
+        .filter-stats strong {
+            color: #2c2c2c;
+        }
+
+        /* ===== PRODUCT GRID ===== */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 4px;
+        }
+
+        .product-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 22px 22px 20px;
+            box-shadow: 0 2px 14px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s, box-shadow 0.25s;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #f0ebe5;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.07);
+            border-color: #dcd3c8;
+        }
+
+        .product-article {
+            font-size: 13px;
+            font-weight: 600;
+            color: #a09080;
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .product-name {
+            font-size: 19px;
+            font-weight: 700;
+            color: #1f3a10;
+            line-height: 1.3;
+            margin-bottom: 4px;
+            transition: color 0.2s;
+        }
+
+        .product-name a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+
+        .product-name a:hover {
+            color: #2d5016;
+            border-bottom-color: #c9a96e;
+        }
+
+        .product-desc {
+            font-size: 14px;
+            color: #6a5f53;
+            line-height: 1.5;
+            margin: 6px 0 14px;
+            flex: 1;
+        }
+
+        .product-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2d5016;
+            margin-bottom: 14px;
+        }
+
+        .product-price small {
+            font-size: 14px;
+            font-weight: 400;
+            color: #8a7a6a;
+            margin-left: 4px;
+        }
+
+        .product-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: auto;
+        }
+
+        .qty-control {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background: #f3efe9;
+            border-radius: 40px;
+            padding: 2px;
+            border: 1px solid #e8e0d8;
+        }
+
+        .qty-control button {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: transparent;
+            border-radius: 40px;
+            font-size: 18px;
+            font-weight: 300;
+            cursor: pointer;
+            color: #4a3f35;
+            transition: background 0.15s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: inherit;
+        }
+
+        .qty-control button:hover {
+            background: #ddd2c6;
+        }
+
+        .qty-control .qty-value {
+            min-width: 44px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 15px;
+            color: #1f3a10;
+        }
+
+        .btn-add {
+            flex: 1;
+            min-width: 100px;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 40px;
+            background: #2d5016;
+            color: #fff;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: inherit;
+        }
+
+        .btn-add:hover {
+            background: #3d6b22;
+        }
+
+        .btn-add:active {
+            transform: scale(0.96);
+        }
+
+        .btn-add.in-cart {
+            background: #c9a96e;
+            color: #1f3a10;
+        }
+
+        .btn-add.in-cart:hover {
+            background: #b8955a;
+        }
+
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 20px;
+            color: #8a7a6a;
+            font-size: 17px;
+            background: #fff;
+            border-radius: 24px;
+            border: 2px dashed #e0d6cc;
+        }
+
+        .no-results i {
+            font-size: 40px;
+            display: block;
+            margin-bottom: 16px;
+            opacity: 0.4;
+        }
+
+        /* ===== CART SIDEBAR ===== */
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.30);
+            backdrop-filter: blur(4px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .cart-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .cart-sidebar {
+            position: fixed;
+            top: 0;
+            right: -460px;
+            width: 440px;
+            max-width: 92vw;
+            height: 100%;
+            background: #fff;
+            z-index: 1000;
+            box-shadow: -8px 0 40px rgba(0, 0, 0, 0.10);
+            transition: right 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: flex;
+            flex-direction: column;
+            border-radius: 28px 0 0 28px;
+            overflow: hidden;
+        }
+
+        .cart-sidebar.open {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 24px 28px 18px;
+            border-bottom: 1px solid #f0ebe5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fbf9f7;
+        }
+
+        .cart-header h2 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #1f3a10;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cart-header h2 i {
+            color: #c9a96e;
+        }
+
+        .cart-close {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: #ece6df;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #4a3f35;
+        }
+
+        .cart-close:hover {
+            background: #ddd2c6;
+        }
+
+        .cart-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 24px 12px;
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 60px 10px;
+            color: #b0a090;
+        }
+
+        .cart-empty i {
+            font-size: 56px;
+            opacity: 0.3;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .cart-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid #f3efe9;
+        }
+
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+
+        .cart-item-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .cart-item-info .name {
+            font-weight: 600;
+            font-size: 15px;
+            color: #1f3a10;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .cart-item-info .meta {
+            font-size: 13px;
+            color: #8a7a6a;
+            margin-top: 2px;
+        }
+
+        .cart-item-qty {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: #f3efe9;
+            border-radius: 40px;
+            padding: 2px 4px;
+            border: 1px solid #e8e0d8;
+        }
+
+        .cart-item-qty button {
+            width: 28px;
+            height: 28px;
+            border: none;
+            background: transparent;
+            border-radius: 40px;
+            font-size: 16px;
+            cursor: pointer;
+            color: #4a3f35;
+            transition: background 0.15s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-family: inherit;
+        }
+
+        .cart-item-qty button:hover {
+            background: #ddd2c6;
+        }
+
+        .cart-item-qty .qty {
+            min-width: 36px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 14px;
+            color: #1f3a10;
+        }
+
+        .cart-item-price {
+            font-weight: 700;
+            font-size: 16px;
+            color: #2d5016;
+            min-width: 80px;
+            text-align: right;
+        }
+
+        .cart-item-remove {
+            background: none;
+            border: none;
+            color: #c0b0a0;
+            font-size: 18px;
+            cursor: pointer;
+            padding: 4px;
+            transition: color 0.2s;
+        }
+
+        .cart-item-remove:hover {
+            color: #c0392b;
+        }
+
+        .cart-footer {
+            padding: 18px 24px 24px;
+            border-top: 1px solid #f0ebe5;
+            background: #fbf9f7;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1f3a10;
+            margin-bottom: 14px;
+        }
+
+        .cart-total .total-price {
+            color: #2d5016;
+        }
+
+        .cart-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .cart-actions button {
+            flex: 1;
+            min-width: 100px;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .cart-actions .btn-copy {
+            background: #e8e0d8;
+            color: #2c2c2c;
+        }
+
+        .cart-actions .btn-copy:hover {
+            background: #d5cbc0;
+        }
+
+        .cart-actions .btn-clear {
+            background: #f0ebe5;
+            color: #6a5f53;
+        }
+
+        .cart-actions .btn-clear:hover {
+            background: #e8e0d8;
+        }
+
+        .cart-actions .btn-order {
+            background: #2d5016;
+            color: #fff;
+            flex: 2;
+        }
+
+        .cart-actions .btn-order:hover {
+            background: #3d6b22;
+        }
+
+        .cart-actions button:active {
+            transform: scale(0.96);
+        }
+
+        /* ===== TOAST ===== */
+      .toast {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    background: #1f3a10;
+    color: #fff;
+    padding: 18px 32px;
+    border-radius: 40px;
+    font-weight: 500;
+    font-size: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transition: opacity 0.35s, transform 0.35s;
+    z-index: 2000;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 90vw;
+    text-align: center;
+    line-height: 1.4;
+    white-space: pre-line;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.toast i {
+    color: #c9a96e;
+    font-size: 22px;
+}
+
+        /* ===== ORDER MODAL ===== */
+        .order-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.40);
+            backdrop-filter: blur(6px);
+            z-index: 1100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+            padding: 20px;
+        }
+
+        .order-modal-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .order-modal {
+            background: #fff;
+            border-radius: 28px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 32px 36px;
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.20);
+            transform: scale(0.94);
+            transition: transform 0.3s;
+        }
+
+        .order-modal-overlay.open .order-modal {
+            transform: scale(1);
+        }
+
+        .order-modal h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1f3a10;
+            margin-bottom: 6px;
+        }
+
+        .order-modal .sub {
+            color: #8a7a6a;
+            font-size: 15px;
+            margin-bottom: 20px;
+        }
+
+        .order-modal .order-items {
+            margin: 12px 0 20px;
+        }
+
+        .order-modal .order-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #f3efe9;
+            font-size: 15px;
+        }
+
+        .order-modal .order-item .oi-name {
+            font-weight: 500;
+        }
+        .order-modal .order-item .oi-qty {
+            color: #6a5f53;
+        }
+        .order-modal .order-item .oi-price {
+            font-weight: 600;
+            color: #2d5016;
+        }
+
+        .order-modal .order-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: 700;
+            color: #1f3a10;
+            padding-top: 16px;
+            border-top: 2px solid #e8e0d8;
+            margin-top: 4px;
+        }
+
+        .order-modal .order-total .ot-price {
+            color: #2d5016;
+        }
+
+        .order-modal .modal-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+            flex-wrap: wrap;
+        }
+
+        .order-modal .modal-actions button {
+            flex: 1;
+            min-width: 100px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-family: inherit;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .order-modal .modal-actions .btn-close-modal {
+            background: #ece6df;
+            color: #2c2c2c;
+        }
+
+        .order-modal .modal-actions .btn-close-modal:hover {
+            background: #ddd2c6;
+        }
+
+        .order-modal .modal-actions .btn-copy-order {
+            background: #2d5016;
+            color: #fff;
+        }
+
+        .order-modal .modal-actions .btn-copy-order:hover {
+            background: #3d6b22;
+        }
+ .product-desc.collapsible .desc-toggle {
+    background: none;
+    border: none;
+    color: #c9a96e;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 4px;
+    text-decoration: underline;
+}
+
+.product-desc.collapsible .desc-toggle:hover {
+    color: #2d5016;
+}
+        /* ===== RESPONSIVE ===== */
+       @media (max-width: 820px) {
+    .header {
+        padding: 20px 22px;
+        gap: 14px;
+    }
+
+    .logo {
+        width: 220px;
+        height: 85px;
+    }
+
+    .brand p {
+        font-size: 15px;
+    }
+    .brand .sub {
+        font-size: 13px;
+    }
+
+    .header-bottom {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+
+    .advantages {
+        flex: 1 1 auto;
+        gap: 4px;
+    }
+
+    .advantages .adv-item {
+        font-size: 13px;
+    }
+
+    .right-column {
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .contacts {
+        justify-content: center;
+        font-size: 13px;
+    }
+
+    .contacts a {
+        white-space: nowrap;
+    }
+
+    .cart-badge {
+        align-self: center;
+    }
+
+    .partners-section {
+        padding: 18px 16px;
+    }
+
+    .filter-bar {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding: 12px 16px !important;
+        gap: 0 !important;
+        row-gap: 0 !important;
+    }
+
+    .category-filter {
+        min-width: auto;
+    }
+
+    .filter-stats {
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: center;
+    }
+
+    .search-wrap {
+        flex: none !important;
+        width: 100% !important;
+        margin: 0 0 4px 0 !important;
+        padding: 0 !important;
+    }
+
+    .category-filter {
+        flex: none !important;
+        width: 100% !important;
+        margin: 0 0 4px 0 !important;
+        padding: 0 !important;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 16px;
+    }
+
+    .cart-sidebar {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 28px 28px 0 0;
+        right: 0;
+        top: 100%;
+        height: 92%;
+        transform: translateY(0);
+        transition: top 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .cart-sidebar.open {
+        top: 8%;
+    }
+
+    .order-modal {
+        padding: 24px 20px;
+    }
+
+    .search-wrap {
+        position: relative;
+    }
+
+    .search-wrap i {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #a09080;
+        font-size: 16px;
+        z-index: 2;
+        display: inline-block;
+        pointer-events: none;
+    }
+
+    /* Убедимся, что инпут имеет правильный padding-left */
+    .search-wrap input {
+        padding-left: 46px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+@media (max-width: 480px) {
+    body {
+        padding: 0 10px 30px;
+    }
+
+    .header {
+        padding: 14px 12px;
+        border-radius: 20px;
+        gap: 12px;
+    }
+
+    .filter-bar {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        padding: 8px 16px !important;
+        gap: 0 !important;
+        row-gap: 0 !important;
+    }
+
+    .search-wrap {
+        flex: none !important;
+        width: 100% !important;
+        margin: 0 0 4px 0 !important;
+        padding: 0 !important;
+    }
+
+    .category-filter {
+        flex: none !important;
+        width: 100% !important;
+        margin: 0 0 4px 0 !important;
+        padding: 0 !important;
+    }
+
+    .search-wrap input {
+        padding: 10px 16px 10px 46px;
+        margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .category-filter select {
+        padding: 10px 16px;
+        margin: 0 !important;
+        width: 100% !important;
+        box-sizing: border-box;
+    }
+
+    .filter-stats {
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: center;
+    }
+
+    .logo {
+        width: 160px;
+        height: 60px;
+    }
+
+    .brand p {
+        font-size: 13px;
+    }
+    .brand .sub {
+        font-size: 12px;
+    }
+
+    .advantages .adv-item {
+        font-size: 12px;
+        gap: 4px;
+    }
+
+    .contacts {
+        font-size: 12px;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .contacts a {
+        white-space: normal;
+        word-break: break-word;
+    }
+
+    .cart-badge {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+    .cart-badge i {
+        font-size: 17px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+    .product-card {
+        padding: 18px;
+    }
+    .cart-sidebar {
+        border-radius: 20px 20px 0 0;
+    }
+    .cart-header {
+        padding: 18px 18px 14px;
+    }
+    .cart-body {
+        padding: 14px 16px 8px;
+    }
+    .cart-footer {
+        padding: 14px 16px 18px;
+    }
+    .order-modal {
+        padding: 20px 16px;
+    }
+} 
+
+        /* ===== SCROLLBAR ===== */
+        .cart-body::-webkit-scrollbar,
+        .order-modal::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        .cart-body::-webkit-scrollbar-track,
+        .order-modal::-webkit-scrollbar-track {
+            background: #f3efe9;
+            border-radius: 10px;
+        }
+
+        .cart-body::-webkit-scrollbar-thumb,
+        .order-modal::-webkit-scrollbar-thumb {
+            background: #d5cbc0;
+            border-radius: 10px;
+         }
+    }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== TOAST ===== -->
+    <div class="toast" id="toast"><i class="fas fa-check-circle"></i> <span id="toastMsg">Добавлено</span></div>
+
+    <!-- ===== HEADER ===== -->
+    <header class="container header">
+    <!-- Верхняя часть: логотип по центру -->
+    <div class="header-top">
+        <div class="logo">
+            <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCADsAtoDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD5kooor8lPkgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigArsPhN8Lda+MfjrTvC2hRA3d0xaSaQHy7aJeXlcjoqj8yQOpAPKW9vNeXMVvbwyTzysEjhjUs7MTwoA6nNfrJ+x/wDs4xfAfwCtxqMMbeMNYRJdQm4Jt16pbqemFB5x1bJyQFr08Bg3i6iUvhR1Yei60vJHzX8Yv+Cc9z4N8BXGteEdduvEWp2Mfm3OnzWyq06AfOYtrfeGCdhyWGQCTgH4q7+/p6c/41+9O0beRX5i/t5fs4n4Z+MT400O3CeGNdnJmijXC2d2QWZcdAkmCy+hDDgBQfVzTLY0oqrRWi3OzFYWMVzwR8oUUUV8ueSFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFIAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiva/wBlP9nq6+P3xDjtbhJIfC+mlZ9VukBHyEnbCp7O5Uj/AGQGPJGK2pUp1pqEVqy4Rc5KKPff+Cff7NP266i+KHiO1zbQsw0O1mXIZxkNckdwpyEz1JLfwqT9ta/8QtH8O+MvDHhi5uM6x4glnS0tlwW2xQvK8jDsoCbc/wB5l96Z4q8TeH/g74ButVvjFpfh/RbQbYolAVUQAJGi+pO1VA7kCvz0+APxd1f43/t1eGPFGsOUaU3sdra7tyWluLK52RL9ASTjqzM3GcV9vGUMtjTw8Pik1c91OOGUaa3Z+gfxd+Jdl8IfAd74s1KKSbT7Ga1S4WLlljluIoWcDvtEhbHU4wKseLvC+gfGHwBd6PqKx6loOtWo2yQsDlWAZJY26ZB2src8gGvMP25oZLj9l3xlFEjSyyPYKkaDLMxvrcAAdzUv7G3gPxl8O/gnpuleM7j/AEkyNLZWDAmWxt2AIhds8kHccfw5x2wO+VSUsR7Bq8Wjo5m6nI1pY/MH4zfCfV/gp8QdS8LawN0lu2+3uQuFurcn5JVGe46jswI7VxFfrV+2F+zrH8ePh802mwoPF2jq0+nSdDOuMvbsf9sDj0YA5ALV+TM8ElrNLDPG0M0bbHjkBUqwzkEHoQR0r4fMMG8JVdvhex4WJo+xlboyOiiivLOQKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiil9B6/n9KANrwV4P1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" alt="ЧаюЧай" />
+        </div>
+    </div>
+
+    <!-- Слоган под логотипом (центр) -->
+    <div class="brand">
+        <p>Более 13 лет лидер на рынке Беларуси, эксперт по премиальному чаю и чайной посуде.</p>
+        <div class="sub">
+            Китайский элитный чай · Немецкий Florapharm · Экзотика и суперфуды · Чайная посуда
+        </div>
+    </div>
+
+    <!-- Нижняя часть: преимущества слева, контакты и корзина справа -->
+    <div class="header-bottom">
+        <div class="advantages">
+            <span class="adv-item"><i class="fas fa-headset"></i> Помощь специалистов при выборе продукта по выгодной стоимости</span>
+            <span class="adv-item"><i class="fas fa-utensils"></i> Составляем уникальное меню для заведений</span>
+            <span class="adv-item"><i class="fas fa-flask"></i> Предоставляем образцы чая</span>
+            <span class="adv-item"><i class="fas fa-truck"></i> Оперативная доставка по РБ</span>
+        </div>
+
+        <div class="right-column">
+            <div class="contacts">
+                <a href="tel:+375447450085"><i class="fas fa-phone-alt"></i> +375 (44) 745-00-85</a>
+                <a href="mailto:chajuchaj@gmail.com"><i class="fas fa-envelope"></i> chajuchaj@gmail.com</a>
+            </div>
+            <div class="cart-badge" id="cartToggle" role="button" tabindex="0" aria-label="Открыть корзину">
+                <i class="fas fa-shopping-bag"></i>
+                <span>Корзина</span>
+                <span class="count" id="cartCount">0</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <!-- ===== PARTNERS CAROUSEL ===== -->
+    <section class="container partners-section">
+        <div class="section-label"><i class="fas fa-handshake" style="margin-right:6px;color:#c9a96e;"></i> Наши партнёры</div>
+        <div class="carousel-wrapper">
+            <div class="carousel-track" id="carouselTrack">
+                <!-- будет заполнено JS -->
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <button id="carouselPrev" aria-label="Назад"><i class="fas fa-chevron-left"></i></button>
+            <div class="carousel-dots" id="carouselDots"></div>
+            <button id="carouselNext" aria-label="Вперёд"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <!-- ===== SEARCH + FILTER ===== -->
+    <div class="container filter-bar">
+        <div class="search-wrap">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Поиск по названию или артикулу..." />
+        </div>
+        <div class="category-filter">
+            <select id="categorySelect">
+                <option value="all">Все категории</option>
+            </select>
+        </div>
+        <div class="filter-stats" id="filterStats">Найдено: <strong id="foundCount">0</strong> товаров</div>
+    </div>
+
+    <!-- ===== PRODUCT GRID ===== -->
+    <div class="container product-grid" id="productGrid">
+        <!-- заполняется JS -->
+    </div>
+
+    <!-- ===== РЕКВИЗИТЫ КОМПАНИИ ===== -->
+<div class="container">
+    <div class="company-details">
+        <div class="left-block">
+            <p><strong>Частное унитарное предприятие «Холихил»</strong></p>
+            <p>УНП 693331367</p>
+            <p>223053 Минский р-н, Боровлянский с/с, п. Сонечный, ул. Сосновая, дом 10, помещение 30</p>
+        </div>
+        <div class="right-block">
+            <a href="https://www.chinatea.by" target="_blank"><i class="fas fa-globe"></i> www.chinatea.by</a>
+            <a href="https://instagram.com/chaju_chaj" target="_blank"><i class="fab fa-instagram"></i> @chaju_chaj</a>
+        </div>
+    </div>
+</div>
+
+    <!-- ===== CART SIDEBAR ===== -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2><i class="fas fa-shopping-bag"></i> Корзина</h2>
+            <button class="cart-close" id="cartClose" aria-label="Закрыть корзину"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="cart-body" id="cartBody">
+            <div class="cart-empty">
+                <i class="fas fa-box-open"></i>
+                <p>Корзина пуста</p>
+                <p style="font-size:14px;margin-top:6px;">Добавьте товары из прайс-листа</p>
+            </div>
+        </div>
+        <div class="cart-footer" id="cartFooter" style="display:none;">
+            <div class="cart-total">
+                <span>Итого</span>
+                <span class="total-price" id="cartTotalPrice">0 BYN</span>
+            </div>
+            <div class="cart-actions">
+                <button class="btn-copy" id="cartCopyBtn"><i class="fas fa-copy"></i> Копировать</button>
+                <button class="btn-clear" id="cartClearBtn"><i class="fas fa-trash-alt"></i> Очистить</button>
+                <button class="btn-order" id="cartOrderBtn"><i class="fas fa-file-invoice"></i> Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ORDER MODAL ===== -->
+    <div class="order-modal-overlay" id="orderModalOverlay">
+        <div class="order-modal">
+            <h2>📋 Ваш заказ</h2>
+            <p class="sub">Проверьте состав и итоговую сумму</p>
+            <div class="order-items" id="orderItems"></div>
+            <div class="order-total">
+                <span>Общая сумма</span>
+                <span class="ot-price" id="orderTotalPrice">0 BYN</span>
+            </div>
+            <div class="modal-actions">
+                <button class="btn-close-modal" id="orderModalClose"><i class="fas fa-times"></i> Закрыть</button>
+                <button class="btn-copy-order" id="orderCopyBtn"><i class="fas fa-copy"></i> Скопировать заказ</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ============================================================ -->
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // =============================================================
+        // 1. PRODUCT DATA (из вашего прайса)
+        // =============================================================
+        const productsData = [
+    { id: 1, article: 'НК-40', name: 'Персик-папайя, Германия', price: 199.39, category: 'Белый чай', url: 'https://chinatea.by/p245303867-belyj-chaj-persik.html', description: 'Состав: белый чай, кусочки засахаренной папайи, яблока и персика, цветки сафлора, натуральный ароматизатор.', unit: 'кг' },
+    { id: 2, article: 'Б-04', name: 'Бай Му Дань / Белый Пион', price: 171.53, category: 'Белый чай', url: 'https://chinatea.by/p25944381-belyj-chaj-baj.html', description: 'Свежий, травянистый, с легкими оттенками фруктов и кураги.', unit: 'кг' },
+    { id: 3, article: 'Б-04 ААА', name: 'Бай Му Дань / Белый Пион ААА', price: 290.14, category: 'Белый чай', url: 'https://chinatea.by/p25944381-belyj-chaj-baj.html', description: 'Свежий, травянистый, с легкими оттенками фруктов и кураги. Настой прозрачный, почти бесцветный, еле уловимым фруктово-карамельным ароматом.', unit: 'кг' },
+    { id: 4, article: '20237', name: 'Ходзича пудровый Удзи', price: 375.22, category: 'Зеленый чай', url: '', description: 'Чай обладает глубоким вкусом с нотами ореха, карамели и печёного молока. Пудровый помол идеален для приготовления ходзича-латте', unit: 'кг' },
+    { id: 5, article: 'НК-01', name: 'Матча зеленая японская', price: 288.6, category: 'Зеленый чай', url: 'https://chinatea.by/p27921113-yaponskij-poroshkovyj-chaj.html', description: 'Насыщенная, травянисто-цветочная, с ореховыми оттенками, легко-сладкая, чуть терпкая.', unit: 'кг' },
+    { id: 6, article: 'НК-00', name: 'Матча Синяя', price: 255.96, category: 'Зеленый чай', url: 'https://chinatea.by/p178415540-poroshkovyj-chaj-matcha.html', description: 'Голубая матча — это перетертые в пудру цветки Клитории Тройчатой.Обладает сладким цветочным ароматом и мягкой терпкостью.', unit: 'кг' },
+    { id: 7, article: 'НК-05', name: 'Сенча японская', price: 267, category: 'Зеленый чай', url: 'https://chinatea.by/p27921116-yaponskij-zelenyj-chaj.html', description: 'Внешне похож на сосновые иголки, и по вкусу - свежий, травянистый, с морскими и ореховыми нотами, легким сладковатым послевкусием умами, красивым настоем изумрудного цвета.', unit: 'кг' },
+    { id: 8, article: 'З-13', name: 'Бай Мао Хоу / Беловолосая обезьяна', price: 111.8, category: 'Зеленый чай', url: 'https://chinatea.by/p13286497-zelenyj-chaj-baj.html', description: 'Классический и самый сладкий из всех зеленых китайских чаев. С очень красивым золотистым настоем и сложным ароматом, от цитрусово-медового до хвойного.', unit: 'кг' },
+    { id: 9, article: 'З-04', name: 'Би ло чунь / Изумрудные спирали весны', price: 301.35, category: 'Зеленый чай', url: 'https://chinatea.by/p7344268-zelenyj-chaj-chun.html', description: 'Цветочный, легкий, освежающий, прекрасен и в холодном, и в горячем виде. Выразительный, выдерживает 7-8 проливов.', unit: 'кг' },
+    { id: 10, article: 'З-03', name: 'Е Шен Люй Ча / Дикорастущий', price: 128.33, category: 'Зеленый чай', url: 'https://chinatea.by/p7049603-zelenyj-chaj-shen.html', description: 'Собирается с дикорастущих или заброшенных кустов. Подвергается минимальной обработке,  поэтому он достаточно терпкий и немного резкий.', unit: 'кг' },
+    { id: 11, article: 'З-02 А+', name: 'Лун Цзин / Колодец дракона А+', price: 165.58, category: 'Зеленый чай', url: 'https://chinatea.by/p7344264-zelenyj-chaj-lun.html', description: 'Освежающий, густой и маслянистый. Травянистый и сладковатый, с легкими нотами луговых трав и орехов, жареных семечек и подсолнечного масла.', unit: 'кг' },
+    { id: 12, article: 'З-14', name: 'Най Сян Чжень Чжу / Молочная жемчужина', price: 234.5, category: 'Зеленый чай', url: 'https://chinatea.by/p27921075-zelenyj-chaj-naj.html', description: 'Аромат сухого листа сливочно-молочный, в заваривании получается светло-желтый настой с ароматом молока.', unit: 'кг' },
+    { id: 13, article: 'З-06 АА', name: 'Моли Хуа Ча / Зеленый с жасмином А', price: 90.92, category: 'Зеленый чай с жасмином', url: 'https://chinatea.by/p7049597-zelenyj-chaj-moli.html', description: 'Душистый жасминовый классический зеленый чай с легкой горчинкой и свежим цветочным послевкусием.', unit: 'кг' },
+    { id: 14, article: 'З-06 ААА', name: 'Моли Хуа Ча / Зеленый с жасмином ААА, Китай', price: 128.06, category: 'Зеленый чай с жасмином', url: 'https://chinatea.by/p238438764-zelenyj-chaj-moli.html', description: 'Аромат душистый жасминовый.Вкус крепкий с легкой горчинкой, с нотками жасмина.Послевкусие освежающее, цветочное.', unit: 'кг' },
+    { id: 15, article: 'З-08 А', name: 'Моли Чжень Чжу / Жасминовые Жемчужины А', price: 232.64, category: 'Зеленый чай с жасмином', url: 'https://chinatea.by/p37123542-zelenyj-chaj-moli.html', description: 'Стойкий и глубокий аромат цветов жасмина, сладковатый вкус. Нежное и освежающее послевкусие.', unit: 'кг' },
+    { id: 16, article: 'З-11', name: 'Моли Фэн Янь / Глаз Феникса', price: 259.87, category: 'Зеленый чай с жасмином', url: 'https://chinatea.by/p27921074-zelenyj-chaj-moli.html', description: 'Нежно-травянистый, ягодно-фруктовый, с яркой жасминовой нотой, тонкий, изящный.', unit: 'кг' },
+    { id: 17, article: 'НК-53', name: 'Зеленый Клубника-абрикос (Германия)', price: 168.04, category: 'Зеленый чай с добавками', url: 'https://chinatea.by/p230452964-zelenyj-chaj-klubnika.html', description: 'Состав: чай зеленый китайская сенча, иван-чай, кусочки абрикоса, листья розы, цветки подсолнечника, кусочки клубники, цветки бархатцев, натуральный ароматизатор.', unit: 'кг' },
+    { id: 18, article: 'НК-44', name: 'Зеленый Вишня-кокос, Германия', price: 180.32, category: 'Зеленый чай с добавками', url: 'https://chinatea.by/p245303870-zelenyj-chaj-vishnya.html', description: 'Состав: белый чай, зеленый чай, вишня, кокосовая стружка, бутоны роз, натуральный ароматизатор.', unit: 'кг' },
+    { id: 19, article: 'НК-42', name: 'Зеленый Итальянский пирог, Германия', price: 174.97, category: 'Зеленый чай с добавками', url: 'https://chinatea.by/p245303868-zelenyj-chaj-italyanskij.html', description: 'Состав: зеленый китайский чай, белый чай, кусочки ананаса, папайи, манго, абрикоса, имбирь, кусочки какао, жареный миндаль, изюм, кардамон, палочки корицы, гвоздика, кориандр, зефирные капли, цедра лимона и апельсина, натуральный ароматизатор.', unit: 'кг' },
+    { id: 20, article: 'НК-45', name: 'Зеленый Энергия годжи, Германия', price: 191.49, category: 'Зеленый чай с добавками', url: 'https://chinatea.by/p245303871-zelenyj-chaj-energiya.html', description: 'Состав: зеленый чай, кусочки ананаса, кожура шиповника, листья шалфея, кора лапачо, бузина, ягоды годжи, малина, корень женьшеня, натуральный ароматизатор.', unit: 'кг' },
+    { id: 21, article: 'НК-43', name: 'Зеленый Матча-ананас, Германия', price: 177.14, category: 'Зеленый чай с добавками', url: 'https://chinatea.by/p245303869-zelenyj-chaj-matcha.html', description: 'Состав: зеленый чай, корень куркумы, кусочки ананаса и имбиря, кокосовая стружка, зеленый чай матча, лепестки розы, натуральный ароматизатор.', unit: 'кг' },
+    { id: 22, article: 'НК-06', name: 'Сенча Лимон-имбирь', price: 99.51, category: 'Зеленый чай с добавками', url: 'https://chinatea.by/p27921117-zelenyj-chaj-limon.html', description: 'Состав: зеленый китайский чай сенча, кусочки имбиря, лимона с цедрой, лепестки календулы, натуральный ароматизатор.', unit: 'кг' },
+    { id: 23, article: 'W-311', name: 'Зеленый Лимон и Мята', price: 100.9, category: 'Зеленый чай с добавками', url: 'https://chinatea.by/p27921117-zelenyj-chaj-limon.html', description: 'Состав: зеленый китайский чай сенча, кусочки  лимона с цедрой, мята, натуральный ароматизатор.', unit: 'кг' },
+    { id: 24, article: 'НК-25', name: 'Зеленый Мулен Руж', price: 103.89, category: 'Зеленый чай с добавками', url: 'https://chinatea.by/p42779658-zelenyj-chaj-mulen.html', description: 'Состав: чай зеленый китайский, кусочки ананаса, кусочки папайи, кусочки яблок, лепестки розы красной, лепестки календулы, лепестки василька, натуральный ароматизатор.', unit: 'кг' },
+    { id: 25, article: 'НК-18', name: 'Зеленый Таежный сбор', price: 132.76, category: 'Зеленый чай с добавками', url: 'https://chinatea.by/p52038427-zelenyj-chaj-taezhnyj.html', description: 'Состав: зеленый китайский чай ганпаудер, целые ягоды ежевики, ягоды брусники, плоды можжевельника, кусочки клюквы и ежевики, лепестки василька, сафлора и брусники, шишки ольхи, натуральный ароматизатор.', unit: 'кг' },
+    { id: 26, article: 'НК-07', name: 'Зеленый Искушение', price: 109.92, category: 'Зеленый чай с добавками', url: 'https://chinatea.by/p230445822-zelenyj-chaj-iskushenie.html', description: 'Состав: зеленый чай, ягоды малины и клубники, кусочки клюквы, кусочки апельсина с цедрой, дольки апельсина, лепестки василька и календулы, натуральный ароматизатор.', unit: 'кг' },
+    { id: 27, article: 'НК-17', name: 'Зеленый Мишки Гамми', price: 103.89, category: 'Зеленый чай с добавками', url: 'https://chinatea.by/p52036617-zelenyj-chaj-mishki.html', description: 'Состав: зеленый китайский чай сенча, кусочки ананаса, папайи и клубники, ягоды красной смородины, лепестки василька и сафлора, натуральный ароматизатор.', unit: 'кг' },
+    { id: 28, article: 'НК-24', name: 'Зеленый с мятой / Марокканская мята', price: 100.12, category: 'Зеленый чай с добавками', url: 'https://chinatea.by/p42778517-zelenyj-chaj-marokkanskaya.html', description: 'Состав: зеленый чай ганпаудер, листья перечной мяты, натуральный ароматизатор.', unit: 'кг' },
+    { id: 29, article: 'У-32 А', name: 'Да Хун Пао / Большой Красный Халат А', price: 265.34, category: 'Улун', url: 'https://chinatea.by/p7353076-temnyj-ulun-hun.html', description: 'Аромат сладкий, яркий, богатый, фантазийный. Вкус насыщенный с явными древесными нотками и легкой медовой сладостью. Послевкусие приятное, яркое, богатое, чуть сладковатое.', unit: 'кг' },
+    { id: 30, article: 'У-08 А+', name: 'Тегуанинь Гуо Сян / Фруктовый Аромат А+', price: 137.2, category: 'Улун', url: 'https://chinatea.by/p228458464-svetlyj-ulun-guan.html', description: 'Обладает плотным, маслянистым вкусом с приятным сладковатым послевкусием.', unit: 'кг' },
+    { id: 31, article: 'У-02 АА', name: 'Тегуанинь / Богиня Милосердия АA', price: 266.34, category: 'Улун', url: 'https://chinatea.by/p7353036-svetlyj-ulun-guan.html', description: 'Яркий аромат сирени и свежескошенной травы, плотный, маслянистый вкус, отсутствие терпкости и долгое, освежающее послевкусие.', unit: 'кг' },
+    { id: 32, article: 'BT-704/1', name: 'ГАБА Алишань', price: 249.41, category: 'Улун', url: 'https://chinatea.by/p244674397-ulun-gaba-alishan.html', description: 'Мягкая и согревающая, с ароматом ржаной хлебной корочки, запеченных сухофруктов, листа смородины и ягодной сладостью', unit: 'кг' },
+    { id: 33, article: 'У-36 ААА+', name: 'ГАБА Бриллиант ААА+', price: 535.65, category: 'Улун', url: 'https://chinatea.by/p243684653-ulun-gaba-brilliant.html', description: 'Плотный, фруктово-пряный, с нотками меда, орехов, сухофруктов, легкой ягодной кислинкой и долгим сладковатым послевкусием', unit: 'кг' },
+    { id: 34, article: 'У-51 ААА+', name: 'Улун Най Сян / Молочный, Тайвань ААА+', price: 207.78, category: 'Улун', url: 'https://chinatea.by/p236266085-chaj-ulun-molochnyj.html', description: 'Обладает богатым, сладковатым вкусом и мягким ароматом, оставляя долгое цветочное послевкусие.', unit: 'кг' },
+    { id: 35, article: 'У-16', name: 'Улун Алишань', price: 159.24, category: 'Улун', url: 'https://chinatea.by/p244651334-ulun-alishan-tajvan.html', description: 'Слабоферментированный чай.Обладаетт насыщенным цветочным ароматом и маслянистым мягким вкусом.', unit: 'кг' },
+    { id: 36, article: 'У-36 А', name: 'ГАБА Бриллиант А', price: 316.42, category: 'Улун', url: 'https://chinatea.by/p243684653-ulun-gaba-brilliant.html', description: 'Плотный, фруктово-пряный, с нотками меда, орехов, сухофруктов, легкой ягодной кислинкой и долгим сладковатым послевкусием', unit: 'кг' },
+    { id: 37, article: 'У-51 ААА', name: 'Улун Най Сян / Молочный, Тайвань ААА', price: 207.78, category: 'Улун', url: 'https://chinatea.by/p228458448-chaj-ulun-molochnyj.html', description: 'Обладает богатым, сладковатым вкусом и мягким ароматом, оставляя долгое цветочное послевкусие.', unit: 'кг' },
+    { id: 38, article: 'У-33', name: 'Габа Медовая', price: 226.19, category: 'Улун', url: 'https://chinatea.by/p228458476-ulun-gaba-medovaya.html', description: 'Оттенки карамели, печеного яблока, цветов и сухофруктов с долгим медовым послевкусием.', unit: 'кг' },
+    { id: 39, article: 'У-06', name: 'Улун Женьшень', price: 136.56, category: 'Улун', url: 'https://chinatea.by/p238463165-ulun-zhenshen.html', description: 'Приятный цветочно-медовый вкус, с пряными нотками и очень долгим сладким послевкусием.', unit: 'кг' },
+    { id: 40, article: 'У-80', name: 'Улун Шоколад с вишней (Да Хун Пао)', price: 104.94, category: 'Улун ароматизированный', url: '', description: 'Вкус с глубокими нотами темного шоколада, спелой вишни и цветочными оттенками розы.', unit: 'кг' },
+    { id: 41, article: 'У-55', name: 'Улун Земляника / Земляничная поляна', price: 108.5, category: 'Улун ароматизированный', url: 'https://chinatea.by/p7353131-chaj-ulun-zemlyanika.html', description: 'Состав: улун, ягоды земляники, листья брусники, натуральный ароматизатор.', unit: 'кг' },
+    { id: 42, article: 'У-56', name: 'Улун Инжир', price: 103.5, category: 'Улун ароматизированный', url: 'https://chinatea.by/p228458445-chaj-ulun-inzhir.html', description: 'Состав: улун, слайсы инжира, лепестки сафлора, натуральный ароматизатор.', unit: 'кг' },
+    { id: 43, article: 'BA-710', name: 'Улун Дыня', price: 105.01, category: 'Улун ароматизированный', url: '', description: 'Состав: Классический улун  с кусочками дыни', unit: 'кг' },
+    { id: 44, article: 'У-53', name: 'Улун Манго с папайей', price: 109.67, category: 'Улун ароматизированный', url: 'https://chinatea.by/p27921087-chaj-ulun-mango.html', description: 'Состав: улун, кусочки папайи, лепестки календулы, натуральный ароматизатор.', unit: 'кг' },
+    { id: 45, article: 'У-52', name: 'Улун Манго', price: 107.87, category: 'Улун ароматизированный', url: 'https://chinatea.by/p238439893-chaj-ulun-mango.html', description: 'Состав: улун, кусочки манго, лепестки календулы, натуральный ароматизатор.', unit: 'кг' },
+    { id: 46, article: 'У-51', name: 'Улун Най Сян / Молочный', price: 98.5, category: 'Улун ароматизированный', url: 'https://chinatea.by/p7053295-chaj-ulun-molochnyj.html', description: 'Вкус молочного улуна мягкий, маслянистый, аромат интенсивный, яркий, с нотами сливочного мороженого, карамели и сгущенного молока.', unit: 'кг' },
+    { id: 47, article: 'W-102', name: 'Английский Завтрак', price: 101.69, category: 'Черный / Красный чай', url: '', description: 'Купаж сортов индийского, цейлонского и кенийского чая. Очень крепкий, терпкий и бодрящий.', unit: 'кг' },
+    { id: 48, article: 'НК-41', name: 'Черный Ассам', price: 72.6, category: 'Черный / Красный чай', url: 'https://chinatea.by/p230452825-indijskij-chernyj-chaj.html', description: 'Классический индийский чай - крепкий, солодовый, насыщенный.', unit: 'кг' },
+    { id: 49, article: 'К-09', name: 'Дянь Хун Мао Фэн / Ворсистые пики', price: 171.17, category: 'Черный / Красный чай', url: 'https://chinatea.by/p27921079-krasnyj-chaj-dyan.html', description: 'Терпкий утренний красный, сильный и объемный, с нотами ржаной корочки, меда и сухофруктов.', unit: 'кг' },
+    { id: 50, article: 'К-04', name: 'Дянь Хун / Юннаньский красный чай', price: 186.2, category: 'Черный / Красный чай', url: 'https://chinatea.by/p7344311-krasnyj-chaj-dyan.html', description: 'Обладает мягким, сладковатым вкусом с нотами меда и сухофруктов.', unit: 'кг' },
+    { id: 51, article: 'К-05', name: 'Цзинь Хао Дянь Хун / Золотая обезьяна', price: 198.27, category: 'Черный / Красный чай', url: 'https://chinatea.by/site_search?search_term=%D0%9A-05', description: 'Вкус насыщенный, сладкий, богатый различными оттенками - от медового до абрикосового.', unit: 'кг' },
+    { id: 52, article: 'К-02', name: 'Цзинь Цзюнь Мэй / Золотые брови АА', price: 268.43, category: 'Черный / Красный чай', url: 'https://chinatea.by/p7344308-krasnyj-chaj-tszin.html', description: 'Яркий, густой и сладкий красный чай. С ароматом горячего хлеба, привкусом клубничного варенья и карамели, долгим шоколадным послевкусием.', unit: 'кг' },
+    { id: 53, article: 'К-08 А', name: 'Янь Сун Сяо Джун / Лапсанг Сушонг дымный А', price: 172.38, category: 'Черный / Красный чай', url: 'https://chinatea.by/p52061690-krasnyj-chaj-yan.html', description: 'Имеет подкопченный смолянистый привкус и аромат', unit: 'кг' },
+    { id: 54, article: 'НК-51', name: 'Черный Апельсиновый марципан (Германия)', price: 169.55, category: 'Черный чай с добавками', url: 'https://chinatea.by/p230452953-chernyj-chaj-apelsinovyj.html', description: 'Состав: чай черный ассам, кожура апельсина, кусочки какао, кокосовая стружка, корица, кориандр, кусочки имбиря, листья розы, кардамон, миндальные хлопья, гвоздика, кусочки ванили, ароматизатор.', unit: 'кг' },
+    { id: 55, article: 'НК-47', name: 'Черный Папайя-ваниль, Германия', price: 174.74, category: 'Черный чай с добавками', url: 'https://chinatea.by/p245303874-chernyj-chaj-papajya.html', description: 'Состав: черный чай, кусочки ананаса и папайи, изюм, цедра апельсина и лимона, кусочки ванили, натуральный ароматизатор.', unit: 'кг' },
+    { id: 56, article: 'НК-49', name: 'Черный Дикая вишня (Германия)', price: 155, category: 'Черный чай с добавками', url: 'https://chinatea.by/p230452933-chernyj-chaj-dikaya.html', description: 'Состав: чай черный-цейлонский, индийский, китайский, кусочки вишни, ароматизатор.', unit: 'кг' },
+    { id: 57, article: 'НК-14', name: 'Черный с бергамотом', price: 110.43, category: 'Черный чай с добавками', url: 'https://chinatea.by/p38476069-chernyj-chaj-bergamotom.html', description: 'Состав: черный индийский чай, плоды аронии, плоды шиповника измельченные лепестки василька, натуральный ароматизатор.', unit: 'кг' },
+    { id: 58, article: 'OW-140', name: 'Черный Эрл Грей', price: 107.16, category: 'Черный чай с добавками', url: '', description: 'Черный чай, ароматизированный натуральным маслом бергамота', unit: 'кг' },
+    { id: 59, article: 'НК-46', name: 'Черный Вишня с ромом', price: 104.28, category: 'Черный чай с добавками', url: 'https://chinatea.by/p230452879-chernyj-chaj-vishnya.html', description: 'Состав: черный индийский чай, ягоды вишни, кусочки клюквы, лепестки розы, листья смородины, натуральный ароматизатор.', unit: 'кг' },
+    { id: 60, article: 'НК-21', name: 'Черный Императорский', price: 111.43, category: 'Черный чай с добавками', url: 'https://chinatea.by/p42776384-chernyj-chaj-imperatorskij.html', description: 'Состав: черный индийский чай, кусочки ананаса, яблок и клубники, плоды шиповника измельченные, цедра апельсина, бутоны и лепестки розы, лепестки василька, натуральный ароматизатор.', unit: 'кг' },
+    { id: 61, article: 'НК-36', name: 'Черный Масала', price: 108.42, category: 'Черный чай с добавками', url: 'https://chinatea.by/p69397923-chernyj-chaj-masala.html', description: 'Состав: индийский черный чай, имбирь, корица, кардамон, душистый перец, гвоздика, фенхель, натуральный ароматизатор.', unit: 'кг' },
+    { id: 62, article: 'НК-22', name: 'Черный с малиной / Ежевика с малиной', price: 141.45, category: 'Черный чай с добавками', url: 'https://chinatea.by/p42778355-chernyj-chaj-ezhevika.html', description: 'Состав: черный индийский чай, целые ягоды ежевики и малины, кусочки малины, листья ежевики, лепестки василька и сафлора, натуральный ароматизатор.', unit: 'кг' },
+    { id: 63, article: 'НК-28', name: 'Черный со смородиной', price: 125.99, category: 'Черный чай с добавками', url: 'https://chinatea.by/p52038516-chernyj-chaj-smorodinoj.html', description: 'Состав: черный индийский чай, ягоды черной смородины, листья смородины, натуральный ароматизатор.', unit: 'кг' },
+    { id: 64, article: 'НК-11', name: 'Черный с чабрецом и мятой', price: 99.93, category: 'Черный чай с добавками', url: 'https://chinatea.by/p230451181-chernyj-chaj-chabretsom.html', description: 'Состав: смесь черных чаев, китайская ромашка, чабрец, листья мяты.', unit: 'кг' },
+    { id: 65, article: 'НК-19', name: 'Черный Таежный сбор', price: 137.17, category: 'Черный чай с добавками', url: 'https://chinatea.by/p42776362-chernyj-chaj-taezhnyj.html', description: 'Состав: черный индийский чай ассам, ягоды брусники и ежевики, кусочки клюквы, плоды можжевельника, листья брусники, лепестки календулы и василька, натуральный арооматизатор.', unit: 'кг' },
+    { id: 66, article: 'НК-16', name: 'Черный Мишки Гамми', price: 106.31, category: 'Черный чай с добавками', url: 'https://chinatea.by/p178870790-chernyj-chaj-mishki.html', description: 'Состав: черный индийский чай, кусочки ананаса и клубники, ягоды красной смородины, лепестки календулы и сафлора, листья ежевики, натуральный ароматизатор.', unit: 'кг' },
+    { id: 67, article: 'ПУ-04 АА', name: 'Шу Ча Гао / Смола Пуэра АА', price: 745, category: 'Шу пуэр', url: 'https://chinatea.by/p230743219-shu-cha-gao.html', description: 'Маленькие гранулы весом в среднем около 1 грамма. Ее нужно просто залить кипятком и дождаться полного растворения.', unit: 'кг' },
+    { id: 68, article: 'ПУ-05', name: 'Шу Вишневый, 5 лет', price: 103.36, category: 'Шу пуэр', url: 'https://chinatea.by/p52062231-shu-puer-vishnevyj.html', description: 'Состав: шу пуэр, ягоды вишни, натуральный ароматизатор.', unit: 'кг' },
+    { id: 69, article: 'ПУ-07', name: 'Шу Ча Хуан / Чайный Император, 8 лет', price: 334.02, category: 'Шу пуэр', url: 'https://chinatea.by/p69212221-shu-puer-cha.html', description: 'Сильный мускусный аромат, нефтяно-черный настой, темный шоколад, какао, горькие травы и жареные орехи в аромате.', unit: 'кг' },
+    { id: 70, article: 'ПУ-03', name: 'Шу Чэнь Нянь / Многолетний, 15 лет', price: 241.49, category: 'Шу пуэр', url: 'https://chinatea.by/p27921096-shu-puer-chen.html', description: 'Мягкий и сладкий пуэр с полутонами специй, сухофруктов и шоколада.', unit: 'кг' },
+    { id: 71, article: 'ПУ-02 АА', name: 'Шу Гун Тин / Дворцовый АА, 10 лет', price: 198.13, category: 'Шу пуэр', url: 'https://chinatea.by/p7057467-shu-puer-gun.html', description: 'Аромат  нежный древесный с тонкими ореховыми нотками.Вкус крепкий ореховый, с нотками табака', unit: 'кг' },
+    { id: 72, article: 'ПУ-64', name: 'Шу блин Красный иероглиф, 100 гр', price: 20.18, category: 'Шу пуэр', url: 'https://chinatea.by/p178824857-shu-puer-krasnyj.html', description: 'Классический гунтин, орехово-древесный.', unit: 'шт' },
+    { id: 73, article: 'ПУ-65', name: 'Шу Гнездо, 2020 г 100 гр', price: 19.49, category: 'Шу пуэр', url: 'https://chinatea.by/p178489365-shu-puer-gnezdo.html', description: 'Вкус насыщенный, но мягкий, преобладают древесно-землистые нотки.', unit: 'шт' },
+    { id: 74, article: 'ПУ-66', name: 'Шу блин Знание, 100 гр', price: 18.74, category: 'Шу пуэр', url: 'https://chinatea.by/p178814303-shu-puer-znanie.html', description: 'Густой и маслянистый, с шоколадным сладким послевкусием и мягким дымным ароматом.', unit: 'шт' },
+    { id: 75, article: 'ПУ-67', name: 'Шу блин Гуанчжоу, 2014 г 100 гр', price: 21.57, category: 'Шу пуэр', url: 'https://chinatea.by/p27921108-shu-puer-guanchzhou.html', description: 'Немного пряный, с грибным ароматом, многослойный, мягко-терпкий с оттенками горького шоколада.', unit: 'шт' },
+    { id: 76, article: 'ПУ-70', name: 'Шу блин Черносливовый, 100 гр', price: 14.6, category: 'Шу пуэр', url: 'https://chinatea.by/p178489394-shu-puer-chernoslivovyj.html', description: 'Яркий насыщенный шу с нотами чернослива, фруктово-ореховым послевкусием, легким карамельным оттенком. Глубокий, крепкий, с легкой горчинкой.', unit: 'шт' },
+    { id: 77, article: 'ПУ-72', name: 'Шу блин Старое дерево, 2016 г 230-250 гр', price: 41.92, category: 'Шу пуэр', url: 'https://chinatea.by/p178826232-shu-puer-staroe.html', description: 'Сбалансированный, древесно-ореховый, с приятным темно-шоколадным послевкусием. Аромат характерный, с оттенками осенней листвы, пряно острый в первых проливах.', unit: 'шт' },
+    { id: 78, article: 'ПЕ-04', name: 'Шен Юэ Гуан Бай / Белый лунный свет, 5 лет', price: 251.06, category: 'Шен пуэр', url: 'https://chinatea.by/p27921091-shen-puer-yue.html', description: 'Аромат цветочный, нежный. Вкус ягодные нотки ежевики и земляники. Послевкусие мёдово-цветочное.', unit: 'шт' },
+    { id: 79, article: 'ПЕ-59', name: 'Шен блин Старое дерево, Мэнхай 250 гр 2016 г', price: 37.12, category: 'Шен пуэр', url: 'https://chinatea.by/p178483260-shen-blin-staroe.html', description: 'Темно-зеленый пуэр с оттенками кураги и меда.', unit: 'шт' },
+    { id: 80, article: 'Т-01', name: 'Иван-чай', price: 129, category: 'Травяные', url: 'https://chinatea.by/p27921134-ivan-chaj-altajskij.html', description: 'Аромат нежный, свежий травяной.Вкус травяной, чуть сладковатый. Послевкусие свежее, травяное с цветочными нотками.', unit: 'кг' },
+    { id: 81, article: 'Т-21 ААА', name: 'Гречишный Ку Цяо, Тайвань', price: 120, category: 'Травяные', url: 'https://chinatea.by/p226353124-grechishnyj-chaj-tsyao.html', description: 'Состав: обжаренные зёрна гречихи.Вкус: мягкий, сладковатый, с нотками печенья.', unit: 'кг' },
+    { id: 82, article: 'Т-21', name: 'Гречишный Тайвань', price: 99.63, category: 'Травяные', url: 'https://chinatea.by/p226353124-grechishnyj-chaj-tsyao.html', description: 'Состав: обжаренные зёрна гречихи.Вкус: мягкий, сладковатый, с нотками печенья.', unit: 'кг' },
+    { id: 83, article: 'Т-26', name: 'Гречишный Липовый мед', price: 84.75, category: 'Травяные', url: 'https://chinatea.by/p226353142-grechishnyj-chaj-lipovyj.html', description: 'Состав: чай гречишный, медовые гранулы липовые, кусочки яблока, медовый ароматизатор', unit: 'кг' },
+    { id: 84, article: 'Т-15', name: 'Гречишный Манго', price: 84.47, category: 'Травяные', url: '', description: 'Состав: гречиха татарская, цукаты манго, натуральный ароматизатор.', unit: 'кг' },
+    { id: 85, article: 'Т-10', name: 'Гречишный пряный', price: 84.7, category: 'Травяные', url: 'https://chinatea.by/p135426670-grechishnyj-chaj-pryanyj.html', description: 'Состав: гречишный чай, корица, имбирь', unit: 'кг' },
+    { id: 86, article: 'Т-14', name: 'Гречишный Рождественский', price: 85.94, category: 'Травяные', url: 'https://chinatea.by/p135428075-grechishnyj-chaj-rozhdestvenskij.html', description: 'Состав: гречишный чай, кусочки корицы, листья ежевики, кусочки апельсина с цедрой, кусочки малины, розовый перец, лепестки василька, аромат цитрусов и восточных пряностей, ароматизатор.', unit: 'кг' },
+    { id: 87, article: 'Т-20', name: 'Гречишный с кокосом', price: 83.15, category: 'Травяные', url: 'https://chinatea.by/p226353130-grechishnyj-chaj-kokosom.html', description: 'Состав: чай гречишный, кокосовая стружка, ароматизатор', unit: 'кг' },
+    { id: 88, article: 'Т-29', name: 'Ананас-розмарин, Германия', price: 189.9, category: 'Травяные', url: 'https://chinatea.by/p245303864-travyanoj-chaj-ananas.html', description: 'Состав: зеленый ройбуш, лемонграсс, листья розмарина, ананасовые чипсы, корень куркумы, кусочки клубники, натуральный ароматизатор.', unit: 'кг' },
+    { id: 89, article: 'Т-28', name: 'Абрикос- вербена, Германия', price: 170, category: 'Травяные', url: 'https://chinatea.by/p245303862-travyanoj-chaj-abrikos.html', description: 'Состав: кусочки яблока, трава лимонной вербены, листья мелиссы, шалфея и мяты перечной, кожура шиповника, семена фенхеля, цветки белого гибискуса, кусочки абрикоса и груши, цветки сафлора, василька, календулы, лепестки розы, натуральный ароматизатор.', unit: 'кг' },
+    { id: 90, article: 'Т-27', name: 'Мята-куркума, Германия', price: 173.04, category: 'Травяные', url: 'https://chinatea.by/p245303861-travyanoj-chaj-myata.html', description: 'Состав: мята перечная, куркума, апельсиновая цедра, лемонграсс, кориандр, дикий тимьян, листья розмарина, одуванчик, манжетка, цветки календулы, натуральный ароматизатор.', unit: 'кг' },
+    { id: 91, article: 'Т-11', name: 'Антистресс (Германия)', price: 164, category: 'Травяные', url: 'https://chinatea.by/p236340289-travyanoj-chaj-antistress.html', description: 'Состав: омела, кожура фасоли, листья березы, лемонграсс, листья крапивы, зверобой, листья гинкго, натуральный ароматизатор.', unit: 'кг' },
+    { id: 92, article: 'Т-18', name: 'Облепиха-куркума (Германия)', price: 187, category: 'Травяные', url: 'https://chinatea.by/p178421184-travyanoj-chaj-oblepiha.html', description: 'Состав: кусочки яблока, ягоды облепихи, кусочки ягоды облепихи, кусочки моркови, лимонник,  натуральный ароматизатор, кожура шиповника, вербена, куркума, цветки сафлора.', unit: 'кг' },
+    { id: 93, article: 'Т-12', name: 'Швейцарский сбор (Германия)', price: 179, category: 'Травяные', url: 'https://chinatea.by/p135427009-travyanoj-chaj-shvejtsarskij.html', description: 'Состав: кусочки моркови, кусочки яблока, цедра апельсина, ройбос, инжир, листья алтея, мята перечная, вербена, цветки мальвы, цветки пассифлоры, натуральный ароматизатор', unit: 'кг' },
+    { id: 94, article: 'Т-24', name: 'Моринга-гранат (Германия)', price: 179, category: 'Травяные', url: 'https://chinatea.by/p236340309-travyanoj-chaj-moringa.html', description: 'Состав: листья моринги, лемонграсс, кусочки засахаренной папайи, листья клубники, вербена, семена граната, цветки розы и граната, красная смородина, натуральный ароматизатор.', unit: 'кг' },
+    { id: 95, article: 'Т-13', name: 'Для сауны', price: 85.21, category: 'Травяные', url: 'https://chinatea.by/p135427166-travyanoj-chaj-dlya.html', description: 'Состав:: листья мяты, листья ежевики, чабрец, фенхель, цветы ромашки, душица, липа цвет, крапива, лист смородины, зверобой, лемонграсс.', unit: 'кг' },
+    { id: 96, article: 'Т-03', name: 'Мелисса-мята-лемонграсс / Спокойной ночи', price: 73.74, category: 'Травяные', url: 'https://chinatea.by/p27921136-travyanoj-chaj-spokojnoj.html', description: 'Состав: мелисса, зверобой, лимонник, листья ежевики, листья мяты, цветки ромашки, василек.', unit: 'кг' },
+    { id: 97, article: 'Т-02', name: 'Мелисса-чабрец-ромашка / Русские традиции', price: 75.79, category: 'Травяные', url: 'https://chinatea.by/p27921135-travyanoj-chaj-russkie.html', description: 'Состав: мелисса, цветки ромашки, листья ежевики, листья смородины, чабрец', unit: 'кг' },
+    { id: 98, article: 'НК-27', name: 'Ройбос Апельсин / Апельсин с медом', price: 110.97, category: 'Травяные', url: 'https://chinatea.by/p42779716-afrikanskij-chaj-rojbos.html', description: 'Состав: чай ройбос, цедра апельсина, листья ежевики, ароматизатор.', unit: 'кг' },
+    { id: 99, article: 'НК-08', name: 'Ройбос Ванильная карамель', price: 110.38, category: 'Травяные', url: 'https://chinatea.by/p178420273-afrikanskij-chaj-rojbos.html', description: 'Состав: чай ройбос, кусочки карамели, ароматизатор', unit: 'кг' },
+    { id: 100, article: 'НК-10', name: 'Ройбос Вишня-миндаль / Вишня с миндалём', price: 107.18, category: 'Травяные', url: 'https://chinatea.by/p27921120-afrikanskij-chaj-rojbos.html', description: 'Состав: ройбос, слайсы миндаля, кусочки клюквы, листья смородины, ароматизатор', unit: 'кг' },
+    { id: 101, article: 'НК-33', name: 'Ройбос Земляничный', price: 120.56, category: 'Травяные', url: 'https://chinatea.by/p135472901-afrikanskij-chaj-rojbos.html', description: 'Состав:ройбос, кусочки клубники, лепестки сафлора, листья смородины, ароматизатор.', unit: 'кг' },
+    { id: 102, article: 'НК-20', name: 'Ройбос классический / Премиум Long Cut', price: 94.64, category: 'Травяные', url: 'https://chinatea.by/p42778330-afrikanskij-chaj-rojbos.html', description: 'Классический ройбос / ройбуш без добавок, длинно нарезанный лист.', unit: 'кг' },
+    { id: 103, article: 'НК-09', name: 'Ройбос Яблоко-корица / Зимняя сказка', price: 107.52, category: 'Травяные', url: 'https://chinatea.by/p27921119-afrikanskij-chaj-rojbos.html', description: 'Состав: ройбос, кусочки яблок, корица, семена фенхеля, гвоздика, лепестки календулы, ароматизатор', unit: 'кг' },
+    { id: 104, article: 'Т-19', name: 'Манго-клюква (Германия)', price: 189.52, category: 'Фруктовые', url: 'https://chinatea.by/p178421298-travyanoj-chaj-mango.html', description: 'Состав:кусочки яблока, кусочки засахаренного манго, цветки  гибискуса, натуральные ароматизаторы цедры граната, лемонграсс, фасоль, кусочки имбиря, зеленый овес, листья березы, ягоды годжи, клюква сладкий лист, цветки граната.', unit: 'кг' },
+    { id: 105, article: 'Ф-28', name: 'Ананас-физалис (Германия)', price: 174.1, category: 'Фруктовые', url: 'https://chinatea.by/p236340238-fruktovyj-chaj-ananas.html', description: 'Состав: кусочки яблока, моркови, свеклы и ананаса, изюм, цветки гибискуса, физалис, натуральный ароматизатор.', unit: 'кг' },
+    { id: 106, article: 'Ф-18', name: 'Апельсин с клубникой (Германия)', price: 174.1, category: 'Фруктовые', url: 'https://chinatea.by/p236338052-fruktovyj-chaj-apelsin.html', description: 'Состав: кусочки моркови, яблока, свеклы, клубники, папайи и гуавы, изюм, красный перец, кусочки апельсина, цветки гибискуса, шпинат, ягоды облепихи, натуральный ароматизатор.', unit: 'кг' },
+    { id: 107, article: 'Ф-19', name: 'Вишневое мороженое (Германия)', price: 187.96, category: 'Фруктовые', url: 'https://chinatea.by/p236338100-fruktovyj-chaj-vishnevoe.html', description: 'Состав: кусочки яблока и моркови, изюм, вишня, пасхальные кролики из изомальта, свекольная крошка, цветки подсолнуха, натуральный ароматизатор.', unit: 'кг' },
+    { id: 108, article: 'Ф-09', name: 'Жареный ананас (Германия)', price: 197.55, category: 'Фруктовые', url: 'https://chinatea.by/p236337908-fruktovyj-chaj-zharenyj.html', description: 'Состав: кусочки яблока, кокосовые чипсы, чипсы ананаса, натуральный ароматизатор.', unit: 'кг' },
+    { id: 109, article: 'Ф-31', name: 'Киви-груша (Германия)', price: 175.69, category: 'Фруктовые', url: 'https://chinatea.by/p236340271-fruktovyj-chaj-kivi.html', description: 'Состав: кусочки груши, яблока, манго и дыни, засахаренный ананас, киви, кожура шиповника, натуральный ароматизатор.', unit: 'кг' },
+    { id: 110, article: 'Ф-15', name: 'Личи-лимон (Германия)', price: 191.07, category: 'Фруктовые', url: 'https://chinatea.by/p236337971-fruktovyj-chaj-lichi.html', description: 'Состав: кусочки личи, яблока, папайи и ананаса, инжир, цедра лимона, гранатовые зерна, цветки мальвы, натуральный ароматизатор.', unit: 'кг' },
+    { id: 111, article: 'Ф-17', name: 'Смородина с малиной (Германия)', price: 190, category: 'Фруктовые', url: 'https://chinatea.by/p236337992-fruktovyj-chaj-smorodina.html', description: 'Состав: кусочки яблока, моркови, свеклы и клубники, изюм, цветы гибискуса, попкорн, малина, красная смородина, натуральный ароматизатор.', unit: 'кг' },
+    { id: 112, article: 'Ф-22', name: 'Персик-хурма, Германия', price: 173.14, category: 'Фруктовые', url: 'https://chinatea.by/p245303865-fruktovyj-chaj-persik.html', description: 'Состав: кусочки яблока, папайи, персика и хурмы, апельсиновая цедра, лемонграсс, красная смородина, лепестки розы, натуральный ароматизатор.', unit: 'кг' },
+    { id: 113, article: 'Ф-23', name: 'Клубника-гуава, Германия', price: 181.35, category: 'Фруктовые', url: 'https://chinatea.by/p245303866-fruktovyj-chaj-klubnika.html', description: 'Состав: кусочки ананаса, папайи, свеклы, клубники и гуавы, цветки гибискуса, бузина, кусочки ванили, натуральный ароматизатор.', unit: 'кг' },
+    { id: 114, article: 'Ф-30', name: 'Тропическое небо (Германия)', price: 193, category: 'Фруктовые', url: 'https://chinatea.by/p226349234-fruktovyj-chaj-tropicheskoe.html', description: 'Состав: кусочки ананаса, манго, папайи и яблока, дольки мандарина, физалис, натуральный ароматизатор.', unit: 'кг' },
+    { id: 115, article: 'Ф-11', name: 'Фруктовый Глинтвейн', price: 106.9, category: 'Фруктовые', url: 'https://chinatea.by/p95789709-fruktovyj-chaj-glintvejn.html', description: 'Состав: кусочки яблок, корицы и имбиря, гибискус, бадьян, кардамон, гвоздика, кусочки апельсина с цедрой, натуральный ароматизатор.', unit: 'кг' },
+    { id: 116, article: 'Ф-04', name: 'Фруктовый с гибискусом / Императорский сад', price: 97.98, category: 'Фруктовые', url: 'https://chinatea.by/p52062259-fruktovyj-chaj-gibiskusom.html', description: 'Состав: гибискус, кусочки  ананаса, папайи, малины, яблок, лепестки календулы, плоды шиповника измельченные, листья смородины, натуральный ароматизатор.', unit: 'кг' },
+    { id: 117, article: 'Ф-05', name: 'Фруктовый с можжевельником / Красный сарафан', price: 97.94, category: 'Фруктовые', url: 'https://chinatea.by/p27921130-fruktovyj-chaj-mozhzhevelnikom.html', description: 'Состав: гибискус, плоды аронии, шиповника и можжевельника, кусочки яблок и клубники, ягоды красной смородины, лепестки календулы и роз, натуральный ароматизатор.', unit: 'кг' },
+    { id: 118, article: 'Ф-01', name: 'Фруктовый Солнечная долина / Не болей', price: 134.97, category: 'Фруктовые', url: 'https://chinatea.by/p178550857-fruktovyj-chaj-solnechnaya.html', description: 'Состав: кусочки яблока, ананаса, имбиря, ягоды облепихи, натуральный ароматизатор.', unit: 'кг' },
+    { id: 119, article: 'Ц-06', name: 'Гибискус (Королевский каркадэ)', price: 74.83, category: 'Цветы', url: 'https://chinatea.by/p27921126-gibiskus-50g.html', description: 'Вкус с кислинкой. Цвет настоя рубиново-красный.', unit: 'кг' },
+    { id: 120, article: 'Ц-02', name: 'Жасмин', price: 140.7, category: 'Цветы', url: 'https://chinatea.by/p7057498-tsvetki-zhasmina-50g.html', description: 'Вкус сладкий, цветочный. Цвет настоя прозрачный с светло-желтым оттенком.', unit: 'кг' },
+    { id: 121, article: 'Ц-10', name: 'Османтус', price: 336, category: 'Цветы', url: 'https://chinatea.by/p178869211-tsvetki-osmantusa.html', description: 'Имеют яркий фруктово-цветочный аромат с нотками персика и абрикоса. Они используются как натуральный ароматизатор для черного и зеленого чая, улунов.', unit: 'кг' },
+    { id: 122, article: 'Ц-05', name: 'Лаванда', price: 145.56, category: 'Цветы', url: 'https://chinatea.by/p7057506-syun-tsao-tsvetki.html', description: 'Вкус свежий, цветочный с легкой перчинкой. Цвет настоя прозрачный с сиреневым оттенком.', unit: 'кг' },
+    { id: 123, article: 'Ц-08', name: 'Мята', price: 85.28, category: 'Цветы', url: 'https://chinatea.by/p178869180-myata-bez-dobavok.html', description: 'Обладает ярким, бодрящим ароматом с нотками ментола и свежей травы. В чае она действует как природный релаксант, снимает спазмы желудка и спасает от усталости.', unit: 'кг' },
+    { id: 124, article: 'Ц-01', name: 'Роза Мэй Гуй', price: 194.25, category: 'Цветы', url: 'https://chinatea.by/p7057500-mej-guj-tsvetki.html', description: 'Вкус нежный, цветочный. Цвет настоя прозрачный с розовым оттенком.', unit: 'кг' },
+    { id: 125, article: 'Ц-03', name: 'Ромашка', price: 152.83, category: 'Цветы', url: 'https://chinatea.by/p7057507-gan-tszyu-tsvetki.html', description: 'Вкус сладковатый, теплый, травянистый. Цвет настоя: прозрачный с желтым оттенком.', unit: 'кг' },
+    { id: 126, article: 'Ц-04', name: 'Синий чай (Анчан)', price: 206.11, category: 'Цветы', url: 'https://chinatea.by/p27921125-sinij-chaj-anchan.html', description: 'Синий чай — вид травяного чая без кофеина.Анчан хорош и горячим, и холодным. Зимой чай слегка подслащивают мёдом. Летом его подают со льдом, мятой и лаймом.', unit: 'кг' },
+    { id: 127, article: 'Ц-07', name: 'Чабрец', price: 79.36, category: 'Цветы', url: 'https://chinatea.by/p135406554-chabrets.html', description: 'Обладает глубоким пряно-травяным, слегка горьковато-сладким вкусом с нотками аниса и тмина. Чай с чабрецом отлично согревает, тонизирует и успокаивает.', unit: 'кг' },
+    { id: 128, article: 'Т-22', name: 'Лемонграсс', price: 70.94, category: 'Цветы', url: 'https://chinatea.by/p236340299-lemongrass.html', description: 'Это тропическое растение с выраженным цитрусово-имбирным вкусом. Он богат антиоксидантами и витаминами. В чае используется для снятия стресса, укрепления иммунитета, нормализации пищеварения и улучшения настроения', unit: 'кг' },
+    { id: 129, article: 'КФ-04', name: 'Баварский Шоколад', price: 115, category: 'Кофе', url: 'https://chinatea.by/p135447929-arabika-aromatom-bavarskij.html', description: 'Аромат с нотами горького шоколада подчеркивает восхитительный вкус настоящего кофе.', unit: 'кг' },
+    { id: 130, article: 'КФ-05', name: 'Бейлиз', price: 115, category: 'Кофе', url: 'https://chinatea.by/p135448952-arabika-aromatom-bejliz.html', description: 'Свежеобжаренный кофе со  сладким вкусом ликера Baileys.', unit: 'кг' },
+    { id: 131, article: 'КФ-14', name: 'Вишня в коньяке', price: 115, category: 'Кофе', url: 'https://chinatea.by/p228460293-arabika-aromatom-vishnya.html', description: 'Зерно сильно прожарено до темно-коричневого цвета, имеет яркий горьковатый вкус с сильным послевкусием и ароматом вишневого ликера.', unit: 'кг' },
+    { id: 132, article: 'КФ-03', name: 'Ирландский Крем', price: 115, category: 'Кофе', url: 'https://chinatea.by/p135446153-arabika-aromatom-irlandskij.html', description: 'Свежеобжаренный кофе с нежным молочным послевкусием и терпким оттенком виски.', unit: 'кг' },
+    { id: 133, article: 'КФ-01', name: 'Колумбия Супремо', price: 137.42, category: 'Кофе', url: 'https://chinatea.by/p135440992-arabika-kolumbiya-supremo.html', description: 'Классическая арабика французской обжарки. Имеет плотный вкус с горьковато-сладким послевкусием.', unit: 'кг' },
+    { id: 134, article: 'П-31', name: 'Венчик для матчи', price: 35, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p178830234-venchik-dlya-matchi.html', description: '', unit: 'шт' },
+    { id: 135, article: 'П-16', name: 'Фильтр-пакеты для чая, размер S - 8*6,5 см', price: 13.28, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p37874399-filtr-pakety-dlya.html', description: '', unit: 'шт' },
+    { id: 136, article: 'П-23', name: 'Фильтр-пакеты для чая, размер М - 13,5*8,5 см', price: 15.21, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p37874399-filtr-pakety-dlya.html', description: '', unit: 'шт' },
+    { id: 137, article: 'CP-02', name: 'Чайная пара 2*150 мл', price: 12, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p27921155-chajnaya-para-150.html', description: 'Samadoyo.  Изготовлены из боросиликатного стекла.Толщина стекла 1,5 мм.', unit: 'шт' },
+    { id: 138, article: 'F-010/2', name: 'Чайная пара с двойным стеклом 2*180 мл', price: 32, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p171088668-chajnaya-para-dvojnogo.html', description: 'Samadoyo. Серия SamaGlass с двойными стенками, которые не обжигают руки и сохраняют напиток теплым дольше, чем обычные чашки. Изготовлены из боросиликатного стекла.', unit: 'шт' },
+    { id: 139, article: 'CP-32', name: 'Чайная пара 2*300 мл', price: 23, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p171084736-chajnaya-para-300.html', description: 'Samadoyo. Изготовлены из боросиликатного стекла и выдерживают перепад температур от -20 до +150.', unit: 'шт' },
+    { id: 140, article: 'BP-13', name: 'Гунфу с магнитной крышкой дерево 500 мл', price: 79, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p207458886-magnitnyj-gunfu-steklyannoj.html', description: 'Samadoyo. Крышка с магнитным креплением, на ней нет кнопки, а чтобы слить настой, нужно повернуть крышку до совмещения магнитов в крышке и в колбе, и чай автоматически сольется в заварник. Крышка и ручка из американского грецкого ореха, колба из боросиликатного стекла', unit: 'шт' },
+    { id: 141, article: 'BP-12', name: 'Гунфу с магнитной крышкой дерево 800 мл', price: 85, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p215582172-magnitnyj-gunfu-steklyannoj.html', description: 'Samadoyo. Крышка и ручка  из американского грецкого ореха, колба из боросиликатного стекла с запатентованным механизмом слива (без пружины, не ломается, на заедает, чаинки не застревают в нем). Стекло выдерживает перепады температур от -20 до +130 градусов.', unit: 'шт' },
+    { id: 142, article: 'P-002A-500', name: 'Гунфу с магнитной кнопкой 500 мл', price: 67, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p238636746-chajnik-gunfu-magnitnoj.html', description: 'Samadoyo. Чайник из боросиликатного стекла, заварочная колба из экологичного пищевого поликарбоната, запорный клапан из нержавеющей стали, с силиконовым колечком.', unit: 'шт' },
+    { id: 143, article: 'P-007A-500', name: 'Гунфу с магнитной крышкой 500 мл, серебро', price: 0, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p244674718-chajnik-gunfu-magnitnoj.html', description: 'Samadoyo.', unit: 'шт' },
+    { id: 144, article: 'P-008B-800', name: 'Гунфу с магнитной крышкой 800 мл, серебро', price: 0, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p244674724-chajnik-gunfu-magnitnoj.html', description: 'Samadoyo.', unit: 'шт' },
+    { id: 145, article: 'A-12', name: 'Гунфу 600 мл', price: 0, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p171086543-chajnik-gunfu-600.html', description: 'Samadoyo.', unit: 'шт' },
+    { id: 146, article: 'A-14', name: 'Гунфу 900 мл', price: 49, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p196855306-chajnik-gunfu-900.html', description: 'Samadoyo. Чайник из термостойкого боросиликатного стекла, заварочная колба из экологичного пищевого поликарбоната, запорный клапан из нержавеющей стали, с силиконовым колечком.', unit: 'шт' },
+    { id: 147, article: 'SAG-10', name: 'Гунфу 750 мл', price: 46, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p22436567-chajnik-gunfu-750.html', description: 'Samadoyo. Все чайники Samadoyo можно использовать как типот, сохраняя температуру чая над свечо', unit: 'шт' },
+    { id: 148, article: 'B-02', name: 'Гунфу с носиком 600 мл', price: 47, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p22436591-chajnik-gunfu-nosikom.html', description: 'Samadoyo. Засыпьте чайные листья в заварочную колбу, залейте водой нужной температуры, подождите 10-40 секунд и нажмите кнопку на крышке. Готовый чай сольется в емкость чайника.', unit: 'шт' },
+    { id: 149, article: 'B-04', name: 'Гунфу с носиком 900 мл', price: 52, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p22436594-chajnik-gunfu-nosikom.html', description: 'Samadoyo. Заварочная колба из экологичного пищевого поликарбоната, выдерживает температуру от -30 °C до +137 °C. Запорный клапан из нержавеющей стали, с силиконовым колечком. Заварочная колба вынимается и может стоять сама по себе. Из нее можно сливать чай сразу в чашку.', unit: 'шт' },
+    { id: 150, article: 'П-21', name: 'Чайник с бамбуковой крышкой 600 мл', price: 19.37, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p239024118-chajnik-zavarochnyj-600.html', description: 'Samadoyo. Стальное ситечко в носике.', unit: 'шт' },
+    { id: 151, article: 'LV-02A-800', name: 'Чайник-кувшин 800 мл', price: 49, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p238636747-chajnik-kuvshin-kryshkoj.html', description: 'Samadoyo. Крышка со встроенным стальным фильтром, силиконовый ободок для надежного крепления внутри кувшина, ручка из пластика.', unit: 'шт' },
+    { id: 152, article: 'S-051H', name: 'Чайник с бамбуковой крышкой 900 мл', price: 37, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p215582214-chajnik-bambukovoj-kryshkoj.html', description: 'Samadoyo. В носике  съемная пружинка, которая задерживает заварку. В бамбуковой крышке - защита из пищевой стали, благодаря которой крышка не рассохнется со временем. На крышке силиконовый уплотнитель, чтобы крышка не выпадала при наклоне.', unit: 'шт' },
+    { id: 153, article: 'S-053', name: 'Чайник с ситом 900 мл', price: 49, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p171081760-chajnik-sitom-900.html', description: 'Samadoyo. Заварочная колба из стали.Можно использовать как типот, сохраняя температуру чая над горелкой со свечой.', unit: 'шт' },
+    { id: 154, article: 'S-051', name: 'Чайник с ситом 900 мл', price: 55, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p135693969-chajnik-sitom-900.html', description: 'Samadoyo. Заварочная колба из стали.Можно использовать как типот, сохраняя температуру чая над горелкой со свечой.', unit: 'шт' },
+    { id: 155, article: 'LV-04B', name: 'Чайник магнитная крышка с ситом 900 мл', price: 75, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p207513590-chajnik-kuvshin-magnitnoj.html', description: 'Samadoyo. Изготовлен из термостойкого боросиликатного стекла выдерживает перепады температур от -30 до +150 градусов, можно заливать как крутой кипяток, так и очень холодную воду со льдом. Стальной фильтр примагничивается к крышке для максимально удобного использования.', unit: 'шт' },
+    { id: 156, article: 'S-042', name: 'Чайник с ситом 500 мл', price: 38, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p207447434-chajnik-sitom-500.html', description: 'Samadoyo. Заварочная колба из стали.Можно использовать как типот, сохраняя температуру чая над горелкой со свечой.', unit: 'шт' },
+    { id: 157, article: 'S-045', name: 'Чайник с ситом 700 мл', price: 42, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p22436597-chajnik-sitom-700.html', description: 'Samadoyo. Заварочная колба из стали.Можно использовать как типот, сохраняя температуру чая над горелкой со свечой.', unit: 'шт' },
+    { id: 158, article: 'S-046', name: 'Чайник с ситом 1200 мл', price: 0, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p27921150-chajnik-sitom-1200.html', description: 'Samadoyo. Заварочная колба из стали.Можно использовать как типот, сохраняя температуру чая над горелкой со свечой.', unit: 'шт' },
+    { id: 159, article: 'S-090', name: 'Чайник с ситом 1300 мл', price: 56, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p171082142-chajnik-sitom-1300.html', description: 'Samadoyo. Заварочная колба из стали.Можно использовать как типот, сохраняя температуру чая над горелкой со свечой.', unit: 'шт' },
+    { id: 160, article: 'DZ-001', name: 'Чайник с ситом 1100 мл', price: 61, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p171080532-chajnik-sitom-1100.html', description: 'Samadoyo. Заварочная колба из стали.Можно использовать как типот, сохраняя температуру чая над горелкой со свечой.', unit: 'шт' },
+    { id: 161, article: 'CP-13', name: 'Чахай 250 мл', price: 16, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p244677406-chahaj-250.html', description: 'Samadoyo. Изготовлен из термостойкого боросиликатного стекла.', unit: 'шт' },
+    { id: 162, article: 'CP-12', name: 'Чахай 400 мл', price: 16, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p244675908-chahaj-400.html', description: 'Samadoyo. Изготовлен из термостойкого боросиликатного стекла.', unit: 'шт' },
+    { id: 163, article: 'L-012D', name: 'Набор дорожный в чехле заварник + 2 пиалы красный', price: 83, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p244686040-dorozhnyj-nabor-neobzhigayuschim.html', description: 'Samadoyo. В комплекте 5 предметов: красный чехол из экокожи на молнии с ручкой, 2 пиалы 45 и 70 мл, заварник с двойными стенками 130 мл, силиконовый вкладыш, чтобы пиалы не соприкасались друг с другом.', unit: 'шт' },
+    { id: 164, article: 'L-008', name: 'Набор дорожный чайник + 3 чашки + банка + чабань', price: 112, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p244685897-dorozhnyj-nabor-chabanyu.html', description: 'Samadoyo. В комплекте 7 предметов:чехол из текстиля на молнии с ручкой, 3 чашки 60 мл, заварник 180 мл,банка для чая 150 мл, чабань', unit: 'шт' },
+    { id: 165, article: 'L-005S', name: 'Набор заварник + 2 пиалы в черном чехле', price: 99, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p172366530-dorozhnyj-nabor-neobzhigayuschimi.html', description: 'Samadoyo. В комплекте 5 предметов: чехол из экокожи на молнии с ручкой, силиконовый чехол для пиал,  2 необжигающие пиалы 40 мл с двойными стенками, необжигающий заварник 220 мл с двойными стенками и стальной крышкой', unit: 'шт' },
+    { id: 166, article: 'П-00', name: 'Пирамидка', price: 0.07, category: 'Посуда и акссесуары', url: '', description: 'Чай в пирамидках для HoReCa.  Премиальное качество листового чая в удобном формате фасовки.', unit: 'шт' },
+    { id: 167, article: 'S-101F', name: 'Банка 300 мл, пластиковая крышка', price: 10, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p27921161-banka-dlya-hraneniya.html', description: 'Samadoyo. Высота без крышки - 75 мм, высота с крышкой - 85 мм.', unit: 'шт' },
+    { id: 168, article: 'S-102F', name: 'Банка 550 мл, пластиковая крышка', price: 13, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p196819721-banka-dlya-hraneniya.html', description: 'Samadoyo. Высота без крышки - 130 мм, высота с крышкой - 140 мм.', unit: 'шт' },
+    { id: 169, article: 'S-103F', name: 'Банка 900 мл, пластиковая крышка', price: 14, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p178631106-banka-dlya-hraneniya.html', description: 'Samadoyo. Высота без крышки - 200 мм, высота с крышкой - 210 мм.', unit: 'шт' },
+    { id: 170, article: 'A-01', name: 'Колба пластиковая для A-12/14, B-02/04', price: 16, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p215935111-kolba-dlya-gunfu.html', description: 'Samadoyo. Подходит к чайникам гунфу классической серии 600, 750 и 900 мл (B-02, B-04, A-12, A-14, SAG-10).', unit: 'шт' },
+    { id: 171, article: 'A-02', name: 'Колба стеклянная для BP-06/09-750', price: 21, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p238636764-kolba-dlya-gunfu.html', description: 'Samadoyo. Подходит к чайникам гунфу премиальной серии BONSTON 550 и 750 мл (BP-06W-550, BP-06-750, BP-09-750).', unit: 'шт' },
+    { id: 172, article: 'A-04', name: 'Колба стеклянная для BP-11, P-002', price: 15, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p238636769-kolba-dlya-gunfu.html', description: 'Samadoyo. Подходит к чайникам гунфу c магнитной крышкой BP-11A и P-002.', unit: 'шт' },
+    { id: 173, article: 'A-03', name: 'Колба стеклянная для BP-12/13', price: 27, category: 'Посуда и акссесуары', url: 'https://chinatea.by/p215935112-kolba-dlya-magnitnogo.html', description: 'Samadoyo. Подходит к магнитным чайникам гунфу с деревянной ручкой BP-12, BP-13.', unit: 'шт' }
+];
+
+        // Отфильтруем товары с ценой > 0 и с названием (на всякий случай)
+        const filteredProducts = productsData.filter(p => p.price > 0 && p.name.trim() !== '');
+
+
+        // =============================================================
+        // 2. PARTNERS DATA (оставляем как есть)
+        // =============================================================
+        const partners = [
+           { name: 'Бары', icon: 'fa-wine-glass-alt' },
+    { name: 'Кофейни', icon: 'fa-coffee' },
+    { name: 'Рестораны', icon: 'fa-utensils' },
+    { name: 'Кальянные', icon: 'fa-fire-flame-curved' },
+    { name: 'Кондитерские', icon: 'fa-cookie-bite' },
+    { name: 'SPA-салоны', icon: 'fa-spa' },
+    { name: 'Фитнес-клубы', icon: 'fa-dumbbell' },
+    { name: 'Йога-студии', icon: 'fa-atom'},
+    { name:  'Корпоративные клиенты', icon: 'fa-gift' },
+        ];
+
+        // =============================================================
+        // 3. STATE (корзина хранит количество в кг с шагом 0.05)
+        // =============================================================
+        let cart = {}; // { productId: kg }
+        let currentCategory = 'all';
+        let currentSearch = '';
+
+        // =============================================================
+        // 4. DOM REFS
+        // =============================================================
+        const grid = document.getElementById('productGrid');
+        const searchInput = document.getElementById('searchInput');
+        const categorySelect = document.getElementById('categorySelect');
+        const foundCount = document.getElementById('foundCount');
+        const cartCount = document.getElementById('cartCount');
+        const cartToggle = document.getElementById('cartToggle');
+        const cartClose = document.getElementById('cartClose');
+        const cartOverlay = document.getElementById('cartOverlay');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const cartBody = document.getElementById('cartBody');
+        const cartFooter = document.getElementById('cartFooter');
+        const cartTotalPrice = document.getElementById('cartTotalPrice');
+        const cartClearBtn = document.getElementById('cartClearBtn');
+        const cartCopyBtn = document.getElementById('cartCopyBtn');
+        const cartOrderBtn = document.getElementById('cartOrderBtn');
+        const orderModalOverlay = document.getElementById('orderModalOverlay');
+        const orderModalClose = document.getElementById('orderModalClose');
+        const orderItems = document.getElementById('orderItems');
+        const orderTotalPrice = document.getElementById('orderTotalPrice');
+        const orderCopyBtn = document.getElementById('orderCopyBtn');
+        const toast = document.getElementById('toast');
+        const toastMsg = document.getElementById('toastMsg');
+
+        // Carousel
+        const track = document.getElementById('carouselTrack');
+        const dotsContainer = document.getElementById('carouselDots');
+        const prevBtn = document.getElementById('carouselPrev');
+        const nextBtn = document.getElementById('carouselNext');
+
+        // =============================================================
+        // 5. HELPERS
+        // =============================================================
+        function formatPrice(p) {
+            return p.toFixed(2) + ' BYN';
+        }
+
+        function formatKg(kg) {
+            return kg.toFixed(2) + ' кг';
+        }
+
+        function showToast(msg) {
+            toastMsg.textContent = msg;
+            toast.classList.add('show');
+            clearTimeout(toast._timer);
+            toast._timer = setTimeout(() => toast.classList.remove('show'), 5000);
+        }
+
+        function getCategoryLabel(cat) {
+            return cat; // просто возвращаем как есть
+        }
+
+        // =============================================================
+        // 6. RENDER PRODUCTS
+        // =============================================================
+        function getFilteredProducts() {
+            return filteredProducts.filter(p => {
+                const matchCategory = currentCategory === 'all' || p.category === currentCategory;
+                const search = currentSearch.trim().toLowerCase();
+                const matchSearch = search === '' ||
+                    p.name.toLowerCase().includes(search) ||
+                    p.article.toLowerCase().includes(search);
+                return matchCategory && matchSearch;
+            });
+        }
+
+        function renderProducts() {
+            const filtered = getFilteredProducts();
+            foundCount.textContent = filtered.length;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                            <div class="no-results">
+                                <i class="fas fa-search"></i>
+                                <p>Ничего не найдено</p>
+                                <p style="font-size:14px;">Попробуйте изменить запрос или категорию</p>
+                            </div>
+                        `;
+                return;
+            }
+
+           grid.innerHTML = filtered.map(p => {
+    const qty = cart[p.id] || 0;
+    const inCart = qty > 0;
+    const step = p.unit === 'шт' ? 1 : 0.05;
+    // Обрезаем описание, если оно длиннее 100 символов
+    const desc = p.description || '';
+    const descShort = desc.length > 100 ? desc.slice(0, 100) + '...' : desc;
+    const hasLongDesc = desc.length > 100;
+    // Ссылка: если url есть, делаем кликабельной, иначе просто текст
+    const nameLink = p.url ? `<a href="${p.url}" target="_blank" title="Перейти на страницу товара">${p.name}</a>` : p.name;
+
+    return `
+        <div class="product-card" data-id="${p.id}">
+            <div class="product-article">${p.article || ''}</div>
+            <div class="product-name">${nameLink}</div>
+            <div class="product-desc ${hasLongDesc ? 'collapsible' : ''}">
+                <span class="desc-text">${descShort}</span>
+                ${hasLongDesc ? `<span class="desc-full" style="display:none;">${desc}</span>` : ''}
+                ${hasLongDesc ? `<button class="desc-toggle" data-id="${p.id}" type="button">Ещё</button>` : ''}
+            </div>
+            <div class="product-price">${formatPrice(p.price)} <small>/ ${p.unit}</small></div>
+            <div class="product-actions">
+                <div class="qty-control">
+                    <button class="qty-dec" data-id="${p.id}" type="button">−</button>
+                    <span class="qty-value" id="qty-${p.id}">${qty > 0 ? qty.toFixed(2) : '0.00'}</span>
+                    <button class="qty-inc" data-id="${p.id}" type="button">+</button>
+                </div>
+                <button class="btn-add ${inCart ? 'in-cart' : ''}" data-id="${p.id}" type="button">
+                    ${inCart ? '<i class="fas fa-check"></i> В корзине' : '<i class="fas fa-plus"></i> Добавить'}
+                </button>
+            </div>
+        </div>
+    `;
+}).join('');
+
+            // Attach events
+            document.querySelectorAll('.qty-dec').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const id = parseInt(btn.dataset.id);
+        const product = filteredProducts.find(p => p.id === id);
+        if (!product) return;
+        const step = product.unit === 'шт' ? 1 : 0.05;
+        updateQty(id, -step);
+    });
+});
+document.querySelectorAll('.qty-inc').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const id = parseInt(btn.dataset.id);
+        const product = filteredProducts.find(p => p.id === id);
+        if (!product) return;
+        const step = product.unit === 'шт' ? 1 : 0.05;
+        updateQty(id, step);
+    });
+});
+document.querySelectorAll('.btn-add').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const id = parseInt(btn.dataset.id);
+        const product = filteredProducts.find(p => p.id === id);
+        if (!product) return;
+        const step = product.unit === 'шт' ? 1 : 0.05;
+        const current = cart[id] || 0;
+        if (current === 0) {
+            updateQty(id, step);
+        } else {
+            updateQty(id, -current);
+        }
+    });
+});
+
+            // Обработка кнопок "Ещё" для длинных описаний
+document.querySelectorAll('.desc-toggle').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const card = this.closest('.product-desc');
+        const full = card.querySelector('.desc-full');
+        const short = card.querySelector('.desc-text');
+        if (full.style.display === 'none') {
+            full.style.display = 'inline';
+            short.style.display = 'none';
+            this.textContent = 'Свернуть';
+        } else {
+            full.style.display = 'none';
+            short.style.display = 'inline';
+            this.textContent = 'Ещё';
+        }
+    });
+});
+        }
+
+        // =============================================================
+        // 7. CART LOGIC
+        // =============================================================
+        function updateQty(id, delta) {
+    const product = filteredProducts.find(p => p.id === id);
+    if (!product) return;
+    const step = product.unit === 'шт' ? 1 : 0.05;
+    let newQty = (cart[id] || 0) + delta;
+    newQty = Math.round(newQty / step) * step;
+    if (newQty < 0) newQty = 0;
+
+            if (newQty === 0) {
+                delete cart[id];
+            } else {
+                cart[id] = newQty;
+            }
+
+            renderProducts();
+            renderCart();
+            updateCartBadge();
+            updateProductQtyDisplay(id);
+        }
+
+        function updateProductQtyDisplay(id) {
+            const el = document.getElementById(`qty-${id}`);
+            if (el) {
+                const qty = cart[id] || 0;
+                el.textContent = qty > 0 ? qty.toFixed(2) : '0.00';
+            }
+            const btn = document.querySelector(`.btn-add[data-id="${id}"]`);
+            if (btn) {
+                const qty = cart[id] || 0;
+                if (qty > 0) {
+                    btn.classList.add('in-cart');
+                    btn.innerHTML = '<i class="fas fa-check"></i> В корзине';
+                } else {
+                    btn.classList.remove('in-cart');
+                    btn.innerHTML = '<i class="fas fa-plus"></i> Добавить';
+                }
+            }
+        }
+
+        function updateCartBadge() {
+    let totalSum = 0;
+    Object.keys(cart).forEach(id => {
+        const pid = parseInt(id);
+        const product = filteredProducts.find(p => p.id === pid);
+        if (product) {
+            totalSum += product.price * cart[pid];
+        }
+    });
+    cartCount.textContent = totalSum.toFixed(2) + ' BYN';
+    cartCount.style.display = totalSum > 0 ? 'inline-block' : 'inline-block';
+}
+
+        function renderCart() {
+            const items = Object.keys(cart);
+            const hasItems = items.length > 0;
+
+            if (!hasItems) {
+                cartBody.innerHTML = `
+                            <div class="cart-empty">
+                                <i class="fas fa-box-open"></i>
+                                <p>Корзина пуста</p>
+                                <p style="font-size:14px;margin-top:6px;">Добавьте товары из прайс-листа</p>
+                            </div>
+                        `;
+                cartFooter.style.display = 'none';
+                return;
+            }
+
+            cartFooter.style.display = 'block';
+
+            let html = '';
+            let total = 0;
+            items.forEach(id => {
+                const pid = parseInt(id);
+                const product = filteredProducts.find(p => p.id === pid);
+                if (!product) return;
+                const qty = cart[pid];
+                const subtotal = product.price * qty;
+                total += subtotal;
+                html += `
+    <div class="cart-item" data-id="${pid}">
+        <div class="cart-item-info">
+            <div class="name">${product.name}</div>
+            <div class="meta">${product.article} · ${formatPrice(product.price)} / ${product.unit}</div>
+        </div>
+        <div class="cart-item-qty">
+            <button class="cart-qty-dec" data-id="${pid}" type="button">−</button>
+            <span class="qty">${qty.toFixed(product.unit === 'шт' ? 0 : 2)}</span>
+            <button class="cart-qty-inc" data-id="${pid}" type="button">+</button>
+        </div>
+        <div class="cart-item-price">${formatPrice(subtotal)}</div>
+        <button class="cart-item-remove" data-id="${pid}" type="button" aria-label="Удалить"><i class="fas fa-times"></i></button>
+    </div>
+`;
+            });
+
+            cartBody.innerHTML = html;
+            cartTotalPrice.textContent = formatPrice(total);
+
+            // Attach cart events
+            document.querySelectorAll('.cart-qty-dec').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const id = parseInt(btn.dataset.id);
+        const product = filteredProducts.find(p => p.id === id);
+        if (!product) return;
+        const step = product.unit === 'шт' ? 1 : 0.05;
+        updateQty(id, -step);
+    });
+});
+document.querySelectorAll('.cart-qty-inc').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const id = parseInt(btn.dataset.id);
+        const product = filteredProducts.find(p => p.id === id);
+        if (!product) return;
+        const step = product.unit === 'шт' ? 1 : 0.05;
+        updateQty(id, step);
+    });
+});
+            document.querySelectorAll('.cart-item-remove').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = parseInt(btn.dataset.id);
+                    const current = cart[id] || 0;
+                    if (current > 0) updateQty(id, -current);
+                });
+            });
+        }
+
+        function getCartTotal() {
+            let total = 0;
+            Object.keys(cart).forEach(id => {
+                const pid = parseInt(id);
+                const p = filteredProducts.find(pr => pr.id === pid);
+                if (p) total += p.price * cart[pid];
+            });
+            return total;
+        }
+
+        function getCartItemsArray() {
+            const result = [];
+            Object.keys(cart).forEach(id => {
+                const pid = parseInt(id);
+                const p = filteredProducts.find(pr => pr.id === pid);
+                if (p) {
+                    result.push({
+                        ...p,
+                        quantity: cart[pid]
+                    });
+                }
+            });
+            return result;
+        }
+
+        // =============================================================
+        // 8. CART UI TOGGLE
+        // =============================================================
+        function openCart() {
+            cartSidebar.classList.add('open');
+            cartOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeCart() {
+            cartSidebar.classList.remove('open');
+            cartOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        cartToggle.addEventListener('click', openCart);
+        cartClose.addEventListener('click', closeCart);
+        cartOverlay.addEventListener('click', closeCart);
+
+        // =============================================================
+        // 9. ORDER MODAL
+        // =============================================================
+        function openOrderModal() {
+            const items = getCartItemsArray();
+            if (items.length === 0) {
+                showToast('Корзина пуста');
+                return;
+            }
+
+            let html = '';
+            let total = 0;
+            items.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                html += `
+                            <div class="order-item">
+                                <span class="oi-name">${item.name}</span>
+                                <span class="oi-qty">${item.quantity.toFixed(item.unit === 'шт' ? 0 : 2)} ${item.unit} × ${formatPrice(item.price)}</span>
+                                <span class="oi-price">${formatPrice(subtotal)}</span>
+                            </div>
+                        `;
+            });
+
+            orderItems.innerHTML = html;
+            orderTotalPrice.textContent = formatPrice(total);
+            orderModalOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeOrderModal() {
+            orderModalOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        orderModalClose.addEventListener('click', closeOrderModal);
+        orderModalOverlay.addEventListener('click', (e) => {
+            if (e.target === orderModalOverlay) closeOrderModal();
+        });
+
+        cartOrderBtn.addEventListener('click', () => {
+            closeCart();
+            setTimeout(openOrderModal, 350);
+        });
+
+        // =============================================================
+        // 10. COPY ORDER
+        // =============================================================
+        function copyOrderText() {
+            const items = getCartItemsArray();
+            if (items.length === 0) {
+                showToast('Корзина пуста');
+                return;
+            }
+
+            let text = '📋 ЗАКАЗ ЧАЯ (ЧаюЧай)\n';
+            text += '═'.repeat(40) + '\n\n';
+            let total = 0;
+            items.forEach(item => {
+                const subtotal = item.price * item.quantity;
+                total += subtotal;
+                text += `• ${item.name} (${item.article})\n`;
+                text += `  ${item.quantity.toFixed(item.unit === 'шт' ? 0 : 2)} ${item.unit} × ${formatPrice(item.price)} = ${formatPrice(subtotal)}\n\n`;
+            });
+            text += '═'.repeat(40) + '\n';
+            text += `💰 ИТОГО: ${formatPrice(total)}\n`;
+            text += `📅 ${new Date().toLocaleDateString('ru-RU')} ${new Date().toLocaleTimeString('ru-RU')}`;
+
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Заказ скопирован!\nВставьте его в мессенджер или письмо для отправки менеджеру.');
+            }).catch(() => {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                showToast('Заказ скопирован!\nВставьте его в мессенджер или письмо для отправки менеджеру.');
+            });
+        }
+
+        cartCopyBtn.addEventListener('click', copyOrderText);
+        orderCopyBtn.addEventListener('click', () => {
+            copyOrderText();
+            closeOrderModal();
+        });
+
+        // =============================================================
+        // 11. CLEAR CART
+        // =============================================================
+        cartClearBtn.addEventListener('click', () => {
+            if (Object.keys(cart).length === 0) return;
+            if (confirm('Очистить корзину?')) {
+                cart = {};
+                renderProducts();
+                renderCart();
+                updateCartBadge();
+                showToast('Корзина очищена');
+            }
+        });
+
+        // =============================================================
+        // 12. SEARCH & FILTER
+        // =============================================================
+        searchInput.addEventListener('input', () => {
+            currentSearch = searchInput.value;
+            renderProducts();
+        });
+
+        categorySelect.addEventListener('change', () => {
+            currentCategory = categorySelect.value;
+            renderProducts();
+        });
+
+        // =============================================================
+        // 13. POPULATE CATEGORIES (уникальные из filteredProducts)
+        // =============================================================
+        function populateCategories() {
+            const cats = new Set();
+            filteredProducts.forEach(p => cats.add(p.category));
+            const sorted = Array.from(cats).sort();
+            categorySelect.innerHTML = '<option value="all">Все категории</option>' +
+                sorted.map(c => `<option value="${c}">${c}</option>`).join('');
+        }
+        populateCategories();
+
+        // =============================================================
+        // 14. PARTNER CAROUSEL (без изменений)
+        // =============================================================
+       let carouselIndex = 0;
+let carouselItems = [];
+
+function getVisibleSlides() {
+    if (window.innerWidth <= 480) return 1;
+    if (window.innerWidth <= 820) return 2;
+    return 4;
+}
+
+        function initCarousel() {
+    track.innerHTML = partners.map(p =>
+        `<div class="carousel-slide"><i class="fas ${p.icon}"></i> ${p.name}</div>`
+    ).join('');
+
+    carouselItems = track.querySelectorAll('.carousel-slide');
+    const visibleSlides = getVisibleSlides();
+
+const total = carouselItems.length;
+const maxIndex = Math.max(0, total - visibleSlides);
+const totalDots = Math.ceil(total / visibleSlides);
+    // Вычисляем стартовые индексы для каждой страницы
+    const pageStarts = [];
+    for (let i = 0; i < totalDots; i++) {
+        const start = Math.min(i * visibleSlides, maxIndex);
+        pageStarts.push(start);
+    }
+    // Сохраняем pageStarts в глобальной переменной, чтобы использовать в других функциях
+    window.pageStarts = pageStarts;
+
+    updateCarousel();
+
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalDots; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'dot' + (i === 0 ? ' active' : '');
+        dot.dataset.index = i;
+        dot.addEventListener('click', () => {
+            carouselIndex = pageStarts[i];
+            updateCarousel();
+        });
+        dotsContainer.appendChild(dot);
+    }
+}
+
+        function updateCarousel() {
+    const visibleSlides = getVisibleSlides();
+
+const total = carouselItems.length;
+const maxIndex = Math.max(0, total - visibleSlides);
+    if (carouselIndex > maxIndex) carouselIndex = maxIndex;
+    if (carouselIndex < 0) carouselIndex = 0;
+
+    let translateX = 0;
+
+for (let i = 0; i < carouselIndex; i++) {
+    translateX += carouselItems[i].offsetWidth + 40;
+}
+
+track.style.transform = `translateX(-${translateX}px)`;
+    // Обновляем активную точку
+    const dots = dotsContainer.querySelectorAll('.dot');
+    const pageStarts = window.pageStarts || [];
+    let activeDotIndex = 0;
+    for (let i = 0; i < pageStarts.length; i++) {
+        if (pageStarts[i] <= carouselIndex) {
+            activeDotIndex = i;
+        }
+    }
+    dots.forEach((d, i) => d.classList.toggle('active', i === activeDotIndex));
+}
+
+        prevBtn.addEventListener('click', () => {
+   const visibleSlides = getVisibleSlides();
+carouselIndex = Math.max(0, carouselIndex - visibleSlides);
+    updateCarousel();
+});
+
+nextBtn.addEventListener('click', () => {
+    const visibleSlides = getVisibleSlides();
+
+    const total = carouselItems.length;
+    const maxIndex = Math.max(0, total - visibleSlides);
+
+    carouselIndex = Math.min(maxIndex, carouselIndex + visibleSlides);
+    updateCarousel();
+});
+
+        window.addEventListener('resize', () => {
+    initCarousel();
+});
+
+        let autoPlay = setInterval(() => {
+            const total = carouselItems.length;
+            const maxIndex = Math.max(0, total - visibleSlides);
+            if (carouselIndex >= maxIndex) {
+                carouselIndex = 0;
+            } else {
+                carouselIndex += visibleSlides;
+            }
+            updateCarousel();
+        }, 4500);
+
+        const carouselSection = document.querySelector('.partners-section');
+        carouselSection.addEventListener('mouseenter', () => clearInterval(autoPlay));
+        carouselSection.addEventListener('mouseleave', () => {
+            autoPlay = setInterval(() => {
+                const total = carouselItems.length;
+                const maxIndex = Math.max(0, total - visibleSlides);
+                if (carouselIndex >= maxIndex) {
+                    carouselIndex = 0;
+                } else {
+                    carouselIndex += visibleSlides;
+                }
+                updateCarousel();
+            }, 4500);
+        });
+
+        // =============================================================
+        // 15. INIT
+        // =============================================================
+        renderProducts();
+        renderCart();
+        updateCartBadge();
+        initCarousel();
+
+        console.log('🍃 ЧаюЧай прайс-лист загружен!');
+        console.log(`📦 Товаров: ${filteredProducts.length}, партнёров: ${partners.length}`);
+    </script>
+
+</body>
+</html>
